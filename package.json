@@ -1,8 +1,49 @@
 {
   "name": "eslint-summary-formatter",
   "version": "0.0.1",
-  "description": "ESLint summary formatter aggregating resuls by rule",
-  "main": "index.js",
+  "description": "ESLint summary formatter aggregating results by rule",
+  "main": "lib/formatter.js",
   "author": "Marton Hipszki <mhipszki@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhipszki/eslint-summary-formatter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mhipszki/eslint-summary-formatter/issues"
+  },
+  "scripts": {
+    "test": "jest --watch",
+    "lint": "eslint .",
+    "try": "eslint -f lib/formatter.js ."
+  },
+  "keywords": [
+    "eslint",
+    "summary",
+    "formatter"
+  ],
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 8
+    },
+    "rules": {
+      "no-console": 0
+    }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.spec.js"
+    ]
+  },
+  "devDependencies": {
+    "chalk": "^2.0.1",
+    "eslint": "^4.3.0",
+    "jest": "^20.0.4"
+  }
 }
