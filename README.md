@@ -36,11 +36,11 @@ See http://eslint.org/docs/user-guide/command-line-interface#-f---format
 
 With the default ESLint formatter you might get several thousands of lines of failing rules in various files in the output e.g.:
 
-**screen grab goes here**
+<img width="715" alt="eslint-output-example-default" src="https://user-images.githubusercontent.com/220661/28670749-ff50aae6-72d1-11e7-8458-da73ae458cd2.png">
 
 The summary formatter simply aggregates the ESLint result _by rule_ and shows the following output instead:
 
-**screen grab goes here**
+<img width="715" alt="eslint-output-example-summary" src="https://user-images.githubusercontent.com/220661/28670748-ff4cff36-72d1-11e7-8fc0-b0d6a12c69ea.png">
 
 ## Contribute
 
