@@ -44,6 +44,14 @@ The summary formatter simply aggregates the ESLint result _by rule_ and shows th
 
 In the above example we can notice that the `comma-dangle` rule is responsible for about 2/3 of the failures, so we can consider turning it off or just suppressing it to a warning for now as we can do so with the other failing rules.
 
+## TODOs
+
+- rewrite code in ES6+ format
+- generate distributable using Babel (support for Node from v6+)
+- add CI integration
+- publish on Npm
+- add CLI option to sort output by error/warning count or rule name
+
 ## Contribute
 
 Please feel free to add an issue describing your proposal if you'd like to discuss and PRs are also welcome!

@@ -2,7 +2,7 @@
   "name": "eslint-summary-formatter",
   "version": "0.0.1",
   "description": "ESLint summary formatter aggregating results by rule",
-  "main": "lib/formatter.js",
+  "main": "index.js",
   "author": "Marton Hipszki <mhipszki@gmail.com>",
   "license": "MIT",
   "repository": {
