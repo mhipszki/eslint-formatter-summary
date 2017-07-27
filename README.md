@@ -42,6 +42,8 @@ The summary formatter simply aggregates the ESLint result _by rule_ and shows th
 
 <img width="715" alt="eslint-output-example-summary" src="https://user-images.githubusercontent.com/220661/28670748-ff4cff36-72d1-11e7-8fc0-b0d6a12c69ea.png">
 
+In the above example we can notice that the `comma-dangle` rule is responsible for about 2/3 of the failures, so we can consider turning it off or just suppressing it to a warning for now as we can do so with the other failing rules.
+
 ## Contribute
 
 Please feel free to add an issue describing your proposal if you'd like to discuss and PRs are also welcome!
