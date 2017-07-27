@@ -27,7 +27,7 @@ npm i --save-dev eslint-summary-formatter
 When you run ESLint just specify `eslint-summary-formatter` as the formatter:
 
 ```
-eslint -f eslint-summary-formatter [file|dir|glob]*
+eslint -f node_modules/eslint-summary-formatter [file|dir|glob]*
 ```
 
 See http://eslint.org/docs/user-guide/command-line-interface#-f---format
