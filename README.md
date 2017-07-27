@@ -44,13 +44,28 @@ The summary formatter simply aggregates the ESLint result _by rule_ and shows th
 
 In the above example we can notice that the `comma-dangle` rule is responsible for about 2/3 of the failures, so we can consider turning it off or just suppressing it to a warning for now as we can do so with the other failing rules.
 
+## Ordering output
+
+CLI options can be passed to the formatter to alter the output.
+
+With `--sortby` you can sort the aggregated results by either `rule`, `errors` or `warnings` e.g.
+
+```
+eslint -f node_modules/eslint-summary-formatter . -- --sort-by rule
+```
+
+the sorted results can be shown either ascending (default) or descending:
+
+```
+eslint -f node_modules/eslint-summary-formatter . -- --sort-by rule --desc
+```
+
 ## TODOs
 
 - rewrite code in ES6+ format
 - generate distributable using Babel (support for Node from v6+)
 - add CI integration
 - publish on Npm
-- add CLI option to sort output by error/warning count or rule name
 
 ## Contribute
 
