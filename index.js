@@ -1,1 +1,1 @@
-module.exports = require('lib/formatter');
+module.exports = require('./lib/formatter');
