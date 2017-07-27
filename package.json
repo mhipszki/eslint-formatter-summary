@@ -20,7 +20,10 @@
   "keywords": [
     "eslint",
     "summary",
-    "formatter"
+    "formatter",
+    "javascript",
+    "linting",
+    "report"
   ],
   "eslintConfig": {
     "extends": "eslint:recommended",
