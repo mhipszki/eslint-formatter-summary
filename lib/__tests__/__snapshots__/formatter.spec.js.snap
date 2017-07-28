@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can sort summary by num of errors 1`] = `
-"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+"[0m[44m ✨  Summary of failing ESLint rules [49m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
 [0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
 [0merrors [0m[0m[31m2[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
@@ -10,7 +10,7 @@ exports[`can sort summary by num of errors 1`] = `
 `;
 
 exports[`can sort summary by num of errors 2`] = `
-"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+"[0m[44m ✨  Summary of failing ESLint rules [49m[0m
 [0merrors [0m[0m[31m2[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
 [0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
@@ -19,7 +19,7 @@ exports[`can sort summary by num of errors 2`] = `
 `;
 
 exports[`can sort summary by num of warnings 1`] = `
-"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+"[0m[44m ✨  Summary of failing ESLint rules [49m[0m
 [0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m2[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
@@ -28,7 +28,7 @@ exports[`can sort summary by num of warnings 1`] = `
 `;
 
 exports[`can sort summary by num of warnings 2`] = `
-"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+"[0m[44m ✨  Summary of failing ESLint rules [49m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m2[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
 [0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
@@ -37,7 +37,7 @@ exports[`can sort summary by num of warnings 2`] = `
 `;
 
 exports[`can sort summary by rule id 1`] = `
-"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+"[0m[44m ✨  Summary of failing ESLint rules [49m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m2[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
 [0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
@@ -46,7 +46,7 @@ exports[`can sort summary by rule id 1`] = `
 `;
 
 exports[`can sort summary by rule id 2`] = `
-"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+"[0m[44m ✨  Summary of failing ESLint rules [49m[0m
 [0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m2[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
@@ -55,7 +55,7 @@ exports[`can sort summary by rule id 2`] = `
 `;
 
 exports[`provides header, summary of rules and total 1`] = `
-"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+"[0m[44m ✨  Summary of failing ESLint rules [49m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m2[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
 [0merrors [0m[0m[31m2[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
