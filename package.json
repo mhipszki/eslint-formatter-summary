@@ -14,6 +14,7 @@
   },
   "scripts": {
     "test": "jest --watch",
+    "build": "babel lib/ --out-dir dist/",
     "lint": "eslint .",
     "try": "eslint -f ./index.js . -- $@"
   },
@@ -49,6 +50,8 @@
     "yargs": "^8.0.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "eslint": "^4.3.0",
     "jest": "^20.0.4"
   }

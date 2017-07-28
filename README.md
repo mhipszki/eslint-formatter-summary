@@ -8,6 +8,14 @@ This package provides a custom ESLint formatter to help in these situations to m
 
 Having this _summary_ overview can give us the opportunity e.g. to consider suppressing certain rules for now and bringing them back in later when we are ready to fix them.
 
+## Supported Node versions
+
+The project came alive with the specific intention is to support all Node.js version from `v4` as this formatter is supposed to be an _enabler for mostly legacy projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
+
+Therefore `babel-cli` along with `babel-preset-env` are used to transpile only the necessary bits in the source code in order to provide support for older Node.js versions.
+
+The transpiled code is generated under the `dist/` folder and it is the one used to generate the summary output of ESLint rather than the original ES7+ source code under `lib/`.
+
 ## Install
 
 If you're using `yarn` just run
