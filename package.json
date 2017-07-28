@@ -16,7 +16,7 @@
     "test": "jest --watch",
     "build": "babel lib/ --out-dir dist/",
     "dev": "babel lib/ --out-dir dist/ --watch",
-    "lint": "eslint .",
+    "lint": "eslint lib/",
     "try": "eslint -f ./index.js . -- $@"
   },
   "keywords": [
@@ -31,10 +31,12 @@
     "extends": "eslint:recommended",
     "env": {
       "node": true,
-      "es6": true
+      "es6": true,
+      "jest": true
     },
     "parserOptions": {
-      "ecmaVersion": 8
+      "ecmaVersion": 8,
+      "sourceType": "module"
     },
     "rules": {
       "no-console": 0
