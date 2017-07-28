@@ -2,7 +2,7 @@
 
 # eslint-formatter-summary
 
-### An specific formatter to support ESLint integration to existing projects
+### A specific formatter to support ESLint integration to existing projects
 
 It is a matter of minutes to add ESLint to a new project, but can be quite challenging to introduce it (or just add a stricter rule set) to an _existing projects_.
 
@@ -14,7 +14,7 @@ Having this _summary_ overview can give us the opportunity e.g. to consider supp
 
 ## Supported Node versions
 
-The project came alive with the specific intention is to support all Node.js version from `v4` as this formatter is supposed to be an _enabler for mostly legacy projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
+The project came alive with the specific intention is to support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for mostly legacy projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
 
 Therefore `babel-cli` along with `babel-preset-env` are used to transpile only the necessary bits in the source code in order to provide support for older Node.js versions.
 
