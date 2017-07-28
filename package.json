@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "jest --watch",
-    "test-ci": "yarn lint && jest",
+    "test-ci": "yarn lint && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "clean-dist": "rm -rf dist",
     "build": "yarn clean-dist && babel lib/ --out-dir dist/",
     "dev": "yarn clean-dist && babel lib/ --out-dir dist/ --watch",
@@ -62,6 +62,7 @@
     "babel-cli": "^6.24.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.0",
+    "coveralls": "^2.13.1",
     "eslint": "^4.3.0",
     "jest": "^20.0.4"
   }
