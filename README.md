@@ -70,8 +70,6 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 
 ## TODOs
 
-- rewrite code in ES6+ format
-- generate distributable using Babel (support for Node from v6+)
 - add CI integration
 - publish on Npm
 - export results as JSON
