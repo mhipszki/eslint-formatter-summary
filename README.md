@@ -66,6 +66,8 @@ eslint -f node_modules/eslint-summary-formatter . -- --sort-by rule --desc
 - generate distributable using Babel (support for Node from v6+)
 - add CI integration
 - publish on Npm
+- export results as JSON
+- export each rules turned off and ready to be added to `.eslintrc`
 
 ## Contribute
 
