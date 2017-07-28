@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`can sort summary by num of errors ascending 1`] = `
+"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+[0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
+[0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
+[0merrors [0m[0m[31m2[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
+
+[0m🔥  [0m[0m[31m4 problems in total[39m[0m[0m (3 [0m[0m[31merrors[39m[0m[0m, 1 [0m[0m[33mwarnings[39m[0m[0m)[0m"
+`;
+
+exports[`can sort summary by num of errors descending 1`] = `
+"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+[0merrors [0m[0m[31m2[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
+[0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
+[0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
+
+[0m🔥  [0m[0m[31m4 problems in total[39m[0m[0m (3 [0m[0m[31merrors[39m[0m[0m, 1 [0m[0m[33mwarnings[39m[0m[0m)[0m"
+`;
+
 exports[`can sort summary by rule id ascending 1`] = `
 "[0m[44m ✨  Summary of failing ESLint rules[49m[0m
 [0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
