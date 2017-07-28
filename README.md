@@ -74,8 +74,9 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 
 ## TODOs
 
-- add CI integration
+- add Npm publish / bump scripts (major, minor, patch)
 - publish on Npm
+- integrate Greenkeeper.io
 - export results as JSON
 - export each rules turned off and ready to be added to `.eslintrc`
 
