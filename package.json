@@ -14,7 +14,8 @@
   },
   "scripts": {
     "test": "jest --watch",
-    "build": "babel lib/ --out-dir dist/ --ignore **/__tests__/*",
+    "build": "babel lib/ --out-dir dist/",
+    "dev": "babel lib/ --out-dir dist/ --watch",
     "lint": "eslint .",
     "try": "eslint -f ./index.js . -- $@"
   },
