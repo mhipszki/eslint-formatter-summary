@@ -12,6 +12,9 @@
   "bugs": {
     "url": "https://github.com/mhipszki/eslint-summary-formatter/issues"
   },
+  "engines": {
+    "node": ">=4.2"
+  },
   "scripts": {
     "lint": "eslint lib/",
     "test": "jest --watch",
@@ -19,7 +22,8 @@
     "clean-dist": "rm -rf dist",
     "build": "yarn clean-dist && babel lib/ --out-dir dist/ --ignore __tests__",
     "dev": "yarn clean-dist && yarn build -- --watch",
-    "try": "eslint -f ./index.js . -- $@"
+    "try": "eslint -f ./index.js . -- $@",
+    "prepublish": "yarn build"
   },
   "keywords": [
     "eslint",
