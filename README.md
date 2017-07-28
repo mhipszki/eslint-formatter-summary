@@ -21,21 +21,21 @@ The transpiled code is generated under the `dist/` folder and it is the one used
 If you're using `yarn` just run
 
 ```
-yarn add --dev eslint-summary-formatter
+yarn add --dev eslint-formatter-summary
 ```
 
 otherwise with `npm` run
 
 ```
-npm i --save-dev eslint-summary-formatter
+npm i --save-dev eslint-formatter-summary
 ```
 
 ## Usage
 
-When you run ESLint just specify `eslint-summary-formatter` as the formatter:
+When you run ESLint just specify `eslint-formatter-summary` as the formatter:
 
 ```
-eslint -f node_modules/eslint-summary-formatter [file|dir|glob]*
+eslint -f node_modules/eslint-formatter-summary [file|dir|glob]*
 ```
 
 See http://eslint.org/docs/user-guide/command-line-interface#-f---format
@@ -59,13 +59,13 @@ CLI options can be passed to the formatter to alter the output.
 With `--sortby` you can sort the aggregated results by either `rule`, `errors` or `warnings` e.g.
 
 ```
-eslint -f node_modules/eslint-summary-formatter . -- --sort-by rule
+eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule
 ```
 
 the sorted results can be shown either ascending (default) or descending:
 
 ```
-eslint -f node_modules/eslint-summary-formatter . -- --sort-by rule --desc
+eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 ```
 
 ## TODOs

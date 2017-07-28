@@ -1,5 +1,5 @@
 {
-  "name": "eslint-summary-formatter",
+  "name": "eslint-formatter-summary",
   "version": "0.0.1",
   "description": "ESLint summary formatter aggregating results by rule",
   "main": "index.js",
@@ -14,8 +14,10 @@
   },
   "scripts": {
     "test": "jest --watch",
-    "build": "babel lib/ --out-dir dist/",
-    "dev": "babel lib/ --out-dir dist/ --watch",
+    "test-ci": "yarn lint && jest",
+    "clean-dist": "rm -rf dist",
+    "build": "yarn clean-dist && babel lib/ --out-dir dist/",
+    "dev": "yarn clean-dist && babel lib/ --out-dir dist/ --watch",
     "lint": "eslint lib/",
     "try": "eslint -f ./index.js . -- $@"
   },
