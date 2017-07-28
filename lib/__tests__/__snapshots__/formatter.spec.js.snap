@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provides header, summary of rules and total 1`] = `
+"[0m[44m ✨  Summary of failing ESLint rules[49m[0m
+[0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m1[39m[0m[0m rule: [0m[0m[90mrule1[39m[0m
+[0merrors [0m[0m[31m0[39m[0m[0m warnings [0m[0m[33m2[39m[0m[0m rule: [0m[0m[90mrule2[39m[0m
+[0merrors [0m[0m[31m2[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule3[39m[0m
+[0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule4[39m[0m
+[0merrors [0m[0m[31m1[39m[0m[0m warnings [0m[0m[33m0[39m[0m[0m rule: [0m[0m[90mrule5[39m[0m
+
+[0m🔥  [0m[0m[31m7 problems in total[39m[0m[0m (4 [0m[0m[31merrors[39m[0m[0m, 3 [0m[0m[33mwarnings[39m[0m[0m)[0m"
+`;

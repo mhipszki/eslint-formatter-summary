@@ -1,1 +1,1 @@
-module.exports = require('./dist/formatter');
+module.exports = require('./dist/formatter').default;
