@@ -4,6 +4,16 @@
 
 ### A specific formatter to support ESLint integration to existing projects
 
+## TL;DR
+
+This formatter simply aggregates the ESLint result _by rule_ and shows the following output:
+
+<img width="715" alt="eslint-output-example-summary" src="https://user-images.githubusercontent.com/220661/28670748-ff4cff36-72d1-11e7-8fc0-b0d6a12c69ea.png">
+
+It can also take CLI arguments for sorting results by rule, errors or warnings e.g. `--sort-by errors --desc` (see details below).
+
+## Intention
+
 It is a matter of minutes to add ESLint to a new project, but can be quite challenging to introduce it (or just add a stricter rule set) to an _existing projects_.
 
 Possibly hundreds if not thousands of errors will pop up which can seem overwhelming to be fixed when we see the default formatted output, forcing us to back up from making our code base better / more consistent.
@@ -75,7 +85,6 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 ## TODOs
 
 - add Npm publish / bump scripts (major, minor, patch)
-- publish on Npm
 - integrate Greenkeeper.io
 - export results as JSON
 - export each rules turned off and ready to be added to `.eslintrc`
