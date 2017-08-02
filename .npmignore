@@ -6,4 +6,6 @@
 .DS_Store
 .editorconfig
 .travis.yml
-.yarn-error.log
+yarn-error.log
+yarn.lock
+.npmignore
