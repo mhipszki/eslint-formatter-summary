@@ -10,7 +10,13 @@ This formatter simply aggregates the ESLint result _by rule_ and shows the follo
 
 <img width="715" alt="eslint-output-example-summary" src="https://user-images.githubusercontent.com/220661/28670748-ff4cff36-72d1-11e7-8fc0-b0d6a12c69ea.png">
 
-It can also take CLI arguments for sorting results by rule, errors or warnings e.g. `--sort-by errors --desc` (see details below).
+It can also take CLI arguments for sorting results by rule, errors or warnings e.g.
+
+```
+eslint -f node_modules/eslint-formatter-summary . -- --sort-by errors --desc
+```
+
+(see details below).
 
 ## Intention
 
