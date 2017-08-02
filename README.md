@@ -76,7 +76,7 @@ In the above example we can notice that the `comma-dangle` rule is responsible f
 
 CLI options can be passed to the formatter to alter the output.
 
-With `--sortby` you can sort the aggregated results by either `rule`, `errors` or `warnings` e.g.
+With `--sort-by` you can sort the aggregated results by either `rule`, `errors` or `warnings` e.g.
 
 ```
 eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule
