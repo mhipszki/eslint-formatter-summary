@@ -4,7 +4,7 @@
 
 ### A specific formatter to support ESLint integration to existing projects
 
-## TL;DR
+## TL;DR
 
 This formatter simply aggregates the ESLint result _by rule_ and shows the following output:
 
