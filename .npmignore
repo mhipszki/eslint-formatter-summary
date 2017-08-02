@@ -2,3 +2,8 @@
 /lib
 /coverage
 .coveralls.yml
+.babelrc
+.DS_Store
+.editorconfig
+.travis.yml
+.yarn-error.log
