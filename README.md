@@ -32,6 +32,16 @@ Having this _summary_ overview can give us the opportunity e.g. to consider supp
 
 The project came alive with the specific intention is to support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for mostly legacy projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
 
+Supported Node.js versions are the _latest_:
+
+- stable
+- LTS
+- v8
+- v7
+- v6
+- v5
+- v4
+
 Therefore `babel-cli` along with `babel-preset-env` are used to transpile only the necessary bits in the source code in order to provide support for older Node.js versions.
 
 The transpiled code is generated under the `dist/` folder and it is the one used to generate the summary output of ESLint rather than the original ES7+ source code under `lib/`.
