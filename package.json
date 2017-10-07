@@ -17,7 +17,7 @@
   },
   "scripts": {
     "lint": "eslint lib/",
-    "test": "jest --watch",
+    "test": "jest",
     "test-ci": "yarn lint && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "clean-dist": "rm -rf dist",
     "build": "yarn clean-dist && babel lib/ --out-dir dist/ --ignore __tests__",
