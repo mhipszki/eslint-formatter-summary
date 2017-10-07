@@ -2,6 +2,8 @@
 
 # eslint-formatter-summary
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mhipszki/eslint-formatter-summary.svg)](https://greenkeeper.io/)
+
 ### A specific formatter to support ESLint integration to existing projects
 
 ## TL;DR
