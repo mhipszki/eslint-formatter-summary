@@ -91,7 +91,6 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 ## TODOs
 
 - run tests on CI on each supported Node version (v4+)
-- upgrade to latest Jest v21.x (Babel transformation not working under v21 for some reason)
 - add Npm publish / bump scripts (major, minor, patch)
 - integrate Greenkeeper.io
 - export results as JSON
