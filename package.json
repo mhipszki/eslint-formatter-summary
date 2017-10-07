@@ -1,6 +1,6 @@
 {
   "name": "eslint-formatter-summary",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint summary formatter aggregating results by rule",
   "main": "index.js",
   "author": "Marton Hipszki <mhipszki@gmail.com>",
