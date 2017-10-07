@@ -90,9 +90,8 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 
 ## TODOs
 
-- run tests on CI on each supported Node version (v4+)
 - add Npm publish / bump scripts (major, minor, patch)
-- integrate Greenkeeper.io
+- add Prettier
 - export results as JSON
 - export each rules turned off and ready to be added to `.eslintrc`
 
