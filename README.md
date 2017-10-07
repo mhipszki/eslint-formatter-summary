@@ -6,7 +6,7 @@
 
 ## TL;DR
 
-This formatter simply aggregates the ESLint result _by rule_ and shows the following output:
+This formatter simply aggregates the ESLint results _by rule_ and shows the following output:
 
 <img width="715" alt="eslint-output-example-summary" src="https://user-images.githubusercontent.com/220661/28670748-ff4cff36-72d1-11e7-8fc0-b0d6a12c69ea.png">
 
@@ -20,11 +20,11 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by errors --desc
 
 ## Intention
 
-It is a matter of minutes to add ESLint to a new project, but can be quite challenging to introduce it (or just add a stricter rule set) to an _existing projects_.
+It is a matter of minutes to add ESLint to a new project, but can be quite challenging to introduce it (or just add a stricter rule set) to _existing projects_, already large codebases.
 
 Possibly hundreds if not thousands of errors will pop up which can seem overwhelming to be fixed when we see the default formatted output, forcing us to back up from making our code base better / more consistent.
 
-This package provides a custom ESLint formatter to help in these situations to make the right decisions by showing the linting results aggregated by rule. It gives a good overview of which rules are failing with errors and warnings summed up by rule.
+This package provides a custom ESLint formatter to help in these situations to make the right decisions by showing the linting results aggregated by rule. It gives an overview of all rules failing showing the total number of errors and warnings summed up by rule.
 
 Having this _summary_ overview can give us the opportunity e.g. to consider suppressing certain rules for now and bringing them back in later when we are ready to fix them.
 
@@ -76,7 +76,7 @@ In the above example we can notice that the `comma-dangle` rule is responsible f
 
 CLI options can be passed to the formatter to alter the output.
 
-With `--sortby` you can sort the aggregated results by either `rule`, `errors` or `warnings` e.g.
+With `--sort-by` you can sort the aggregated results by either `rule`, `errors` or `warnings` e.g.
 
 ```
 eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule
@@ -90,6 +90,7 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 
 ## TODOs
 
+- run tests on CI on each supported Node version (v4+)
 - add Npm publish / bump scripts (major, minor, patch)
 - integrate Greenkeeper.io
 - export results as JSON
