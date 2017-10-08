@@ -24,7 +24,8 @@
     "dev": "yarn clean-dist && yarn build -- --watch",
     "try": "eslint -f ./index.js . -- $@",
     "prepublish": "yarn build",
-    "prettier-all": "prettier --write '**/*.js{,on}'"
+    "prettier-all": "prettier --write '**/*.js{,on}'",
+    "prettier-diff": "prettier --list-different '**/*.js{,on}'"
   },
   "keywords": [
     "eslint",
