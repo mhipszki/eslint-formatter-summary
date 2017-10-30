@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mhipszki/eslint-formatter-summary.svg?branch=master)](https://travis-ci.org/mhipszki/eslint-formatter-summary) [![Coverage Status](https://coveralls.io/repos/github/mhipszki/eslint-formatter-summary/badge.svg?branch=master)](https://coveralls.io/github/mhipszki/eslint-formatter-summary?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/mhipszki/eslint-formatter-summary.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/mhipszki/eslint-formatter-summary.svg?branch=master)](https://travis-ci.org/mhipszki/eslint-formatter-summary) [![npm](https://img.shields.io/npm/v/eslint-formatter-summary.svg)](https://www.npmjs.com/package/eslint-formatter-summary) [![styled with prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Coverage Status](https://coveralls.io/repos/github/mhipszki/eslint-formatter-summary/badge.svg?branch=master)](https://coveralls.io/github/mhipszki/eslint-formatter-summary?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/mhipszki/eslint-formatter-summary.svg)](https://greenkeeper.io/) [![license](https://img.shields.io/github/license/mhipszki/eslint-formatter-summary.svg)](https://github.com/mhipszki/eslint-formatter-summary/blob/master/LICENSE)
 
 # eslint-formatter-summary
 
@@ -100,10 +100,9 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 
 ## TODOs
 
-- add Npm publish / bump scripts (major, minor, patch)
-- add Prettier
+- add [semantic-release](https://github.com/semantic-release/semantic-release)
 - export results as JSON
-- export each rules turned off and ready to be added to `.eslintrc`
+- export each rule turned off and ready to be added to `.eslintrc`
 
 ## Contribute
 
