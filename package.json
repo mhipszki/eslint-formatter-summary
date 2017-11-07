@@ -76,6 +76,6 @@
     "coveralls": "^3.0.0",
     "eslint": "^4.3.0",
     "jest": "^21.2.1",
-    "prettier": "1.7.4"
+    "prettier": "1.8.0"
   }
 }
