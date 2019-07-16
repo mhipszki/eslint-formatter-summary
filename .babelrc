@@ -1,12 +1,15 @@
 {
   "presets": [
-    ["env", {
-      "targets": {
-        "node": "4"
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3,
+        "targets": {
+          "node": "4"
+        }
       }
-    }]
+    ]
   ],
-  "plugins": [
-    "add-module-exports"
-  ]
+  "plugins": ["add-module-exports"]
 }
