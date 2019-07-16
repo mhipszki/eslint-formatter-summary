@@ -59,9 +59,6 @@
     "testPathIgnorePatterns": [
       "node_modules",
       "dist"
-    ],
-    "setupFiles": [
-      "<rootDir>/node_modules/babel-polyfill/lib/index.js"
     ]
   },
   "np": {
