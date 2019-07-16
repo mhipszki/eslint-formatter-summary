@@ -77,7 +77,9 @@
     "coveralls": "^3.0.0",
     "eslint": "^4.3.0",
     "jest": "^24.8.0",
-    "np": "^5.0.3",
     "prettier": "1.9.0"
+  },
+  "optionalDependencies": {
+    "np": "^5.0.3"
   }
 }
