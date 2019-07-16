@@ -36,6 +36,7 @@ Supported Node.js versions are the _latest_:
 
 - stable
 - LTS
+- v9
 - v8
 - v7
 - v6
@@ -103,10 +104,83 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 - add [semantic-release](https://github.com/semantic-release/semantic-release)
 - export results as JSON
 - export each rule turned off and ready to be added to `.eslintrc`
+- allow different output showing files with aggregated number of errors / warnings
 
 ## Contribute
 
-Please feel free to add an issue describing your proposal if you'd like to discuss and PRs are also welcome!
+Please feel free to submit an issue describing your proposal you would like to discuss. PRs are also welcome!
+
+### Install dependencies
+
+```
+yarn
+```
+
+### Run unit tests
+
+```
+yarn test
+```
+
+or with watch:
+
+```
+yarn test --watch
+```
+
+### Change code
+
+The project's code is written using the latest EcmaScript standard's features, some of which needs to be polyfilled in older Node.js versions e.g. `Array.prototype.includes` and `String.prototype.padLeft` etc., for that `core-js` is being used.
+
+When changing code, you might want to run unit tests and re-build the project on file changes:
+
+```
+yarn test --watch
+```
+
+and 
+
+```
+yarn dev
+```
+
+### Build project
+
+```
+yarn build
+```
+
+This will use `babel-cli` to transpile the source code targeting `node v4` (the lowest supported Node.js version) to `dist` folder.
+
+### Test build project
+
+Once the project is built the distribution version can be tested via passing a `.js` file to `yarn try`.
+
+For example:
+
+```
+yarn try dist/format-summary.js
+```
+
+### CI build
+
+The project is built on Travis-ci.org targeting each supported Node.js versions (see the list above).
+
+During the CI build all source files are linted and all unit tests need to pass resulting in a coverage report.
+
+### Publishing new versions
+
+The project uses semantic versioning.
+
+`patch` versions are used to fix bugs and upgrade dependencies. `minor` versions are used to add new _non-breaking_ features. `major` version is bumped when there are significant changes which could break projects already using `eslint-formatter-summary`.
+
+To publish a new version we use `np`
+
+```
+yarn release 1.2.3
+```
+
+See https://github.com/sindresorhus/np for more options.
 
 ## License
 

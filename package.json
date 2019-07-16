@@ -23,6 +23,7 @@
     "build": "yarn clean-dist && babel lib/ --out-dir dist/ --ignore __tests__",
     "dev": "yarn clean-dist && yarn build -- --watch",
     "try": "eslint -f ./index.js . -- $@",
+    "release": "np",
     "prepublish": "yarn build",
     "prettier-all": "prettier --write '**/*.js{,on}'",
     "prettier-diff": "prettier --list-different '**/*.js{,on}'"
@@ -63,6 +64,9 @@
       "<rootDir>/node_modules/babel-polyfill/lib/index.js"
     ]
   },
+  "np": {
+
+  },
   "dependencies": {
     "chalk": "^2.0.1",
     "core-js": "^3.1.4",
@@ -76,6 +80,7 @@
     "coveralls": "^3.0.0",
     "eslint": "^4.3.0",
     "jest": "^24.8.0",
+    "np": "^5.0.3",
     "prettier": "1.9.0"
   }
 }
