@@ -25,7 +25,7 @@
     "try": "eslint -f ./index.js . -- $@",
     "release": "np",
     "prepublish": "yarn build",
-    "prettier-all": "prettier --write '**/*.js{,on}'",
+    "prettier-write": "prettier --write '**/*.js{,on}'",
     "prettier-diff": "prettier --list-different '**/*.js{,on}'"
   },
   "keywords": [
@@ -39,6 +39,20 @@
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn lint && yarn test --collectCoverage"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint",
+      "jest --forceExit --findRelatedTests",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -78,7 +92,9 @@
     "babel-plugin-add-module-exports": "^1.0.2",
     "coveralls": "^3.0.5",
     "eslint": "^6.0.1",
+    "husky": "^3.0.0",
     "jest": "^24.8.0",
+    "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
     "strip-ansi": "^5.2.0"
   },
