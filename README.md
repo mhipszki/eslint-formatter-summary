@@ -186,12 +186,10 @@ See https://github.com/sindresorhus/np for more options.
 
 ## TODOs
 
-- remove ansi colours from test snapshots to allow them to pass when `np` runs them
-- add [semantic-release](https://github.com/semantic-release/semantic-release)
+- test formatter with different Node.js and ESLint versions on CI
+- allow different output showing files with aggregated number of errors / warnings
 - export results as JSON
 - export each rule turned off and ready to be added to `.eslintrc`
-- allow different output showing files with aggregated number of errors / warnings
-- test formatter with different Node.js and ESLint versions on CI
 
 ## License
 
