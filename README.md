@@ -2,7 +2,7 @@
 
 # eslint-formatter-summary
 
-### A specific formatter to support ESLint integration to existing projects
+> A specific formatter to support [ESLint](https://eslint.org) integration to existing projects
 
 ## TL;DR
 
@@ -18,36 +18,7 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by errors --desc
 
 (see details below).
 
-## Intention
-
-It is a matter of minutes to add ESLint to a new project, but can be quite challenging to introduce it (or just add a stricter rule set) to _existing projects_, already large codebases.
-
-Possibly hundreds if not thousands of errors will pop up which can seem overwhelming to be fixed when we see the default formatted output, forcing us to back up from making our code base better / more consistent.
-
-This package provides a custom ESLint formatter to help in these situations to make the right decisions by showing the linting results aggregated by rule. It gives an overview of all rules failing showing the total number of errors and warnings summed up by rule.
-
-Having this _summary_ overview can give us the opportunity e.g. to consider suppressing certain rules for now and bringing them back in later when we are ready to fix them.
-
-## Supported Node versions
-
-The project came alive with the specific intention is to support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for mostly legacy projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
-
-Supported Node.js versions are the _latest_:
-
-- stable
-- LTS
-- v9
-- v8
-- v7
-- v6
-- v5
-- v4
-
-Therefore `babel-cli` along with `babel-preset-env` are used to transpile only the necessary bits in the source code in order to provide support for older Node.js versions.
-
-The transpiled code is generated under the `dist/` folder and it is the one used to generate the summary output of ESLint rather than the original ES7+ source code under `lib/`.
-
-## Install
+## How to install
 
 If you're using `yarn` just run
 
@@ -61,15 +32,52 @@ otherwise with `npm` run
 npm i --save-dev eslint-formatter-summary
 ```
 
-## Usage
+## How to use
 
 When you run ESLint just specify `eslint-formatter-summary` as the formatter:
+
+```
+eslint -f summary [file|dir|glob]*
+```
+
+or if you use an older version of ESLint:
 
 ```
 eslint -f node_modules/eslint-formatter-summary [file|dir|glob]*
 ```
 
 See http://eslint.org/docs/user-guide/command-line-interface#-f---format
+
+## Intention
+
+It is a matter of minutes to add ESLint to a new project, but can be quite challenging to introduce it (or just add a stricter rule set) to _existing projects_, already large codebases.
+
+Possibly hundreds if not thousands of errors will pop up which can seem overwhelming to be fixed when we see the default formatted output, forcing us to back up from making our code base better / more consistent.
+
+This package provides a custom ESLint formatter to help in these situations to make the right decisions by showing the linting results aggregated by rule. It gives an overview of all rules failing showing the total number of errors and warnings summed up by rule.
+
+Having this _summary_ overview can give us the opportunity e.g. to consider suppressing certain rules for now and bringing them back in later when we are ready to fix them.
+
+## Supported Node versions
+
+The project came alive with the specific intention to support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for most projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
+
+Supported Node.js versions are the _latest_:
+
+- stable
+- LTS
+- v9
+- v8
+- v7
+- v6
+- v5
+- v4
+
+The distribution version targets Node.js `v4` and should work on this version and above.
+
+## Supported ESLint versions
+
+`ESLint` versions are supported from `v4` onwards, although `eslint-formatter-summary` may also work with lower versions of ESLint. Please open an issue if you need support for other versions of ESLint.
 
 ## Output format
 
@@ -151,6 +159,8 @@ yarn build
 ```
 
 This will use `babel-cli` to transpile the source code targeting `node v4` (the lowest supported Node.js version) to `dist` folder.
+
+The transpiled code is generated under the `dist/` folder and it is the one used to generate the summary output of ESLint rather than the original ES7+ source code under `lib/`.
 
 ### Test build project
 
