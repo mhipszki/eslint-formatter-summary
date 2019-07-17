@@ -107,13 +107,6 @@ the sorted results can be shown either ascending (default) or descending:
 eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 ```
 
-## TODOs
-
-- add [semantic-release](https://github.com/semantic-release/semantic-release)
-- export results as JSON
-- export each rule turned off and ready to be added to `.eslintrc`
-- allow different output showing files with aggregated number of errors / warnings
-
 ## Contribute
 
 Please feel free to submit an issue describing your proposal you would like to discuss. PRs are also welcome!
@@ -191,6 +184,14 @@ yarn release 1.2.3
 ```
 
 See https://github.com/sindresorhus/np for more options.
+
+## TODOs
+
+- add [semantic-release](https://github.com/semantic-release/semantic-release)
+- export results as JSON
+- export each rule turned off and ready to be added to `.eslintrc`
+- allow different output showing files with aggregated number of errors / warnings
+- test formatter with different Node.js and ESLint versions on CI
 
 ## License
 
