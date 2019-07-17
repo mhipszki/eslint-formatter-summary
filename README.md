@@ -2,7 +2,12 @@
 
 # eslint-formatter-summary
 
-> A specific formatter to support [ESLint](https://eslint.org) integration to existing projects
+> [ESLint](https://eslint.org) formatter aggregating results by rule
+
+## Features
+
+- aggregated errors / warnings per rule
+- sort by rule name, number of errors or warnings
 
 ## TL;DR
 
@@ -13,7 +18,7 @@ This formatter simply aggregates the ESLint results _by rule_ and shows the foll
 It can also take CLI arguments for sorting results by rule, errors or warnings e.g.
 
 ```
-eslint -f node_modules/eslint-formatter-summary . -- --sort-by errors --desc
+eslint -f summary ./src -- --sort-by errors --desc
 ```
 
 (see details below).
@@ -91,20 +96,20 @@ The summary formatter simply aggregates the ESLint result _by rule_ and shows th
 
 In the above example we can notice that the `comma-dangle` rule is responsible for about 2/3 of the failures, so we can consider turning it off or just suppressing it to a warning for now as we can do so with the other failing rules.
 
-## Ordering output
+## Sorting output
 
 CLI options can be passed to the formatter to alter the output.
 
 With `--sort-by` you can sort the aggregated results by either `rule`, `errors` or `warnings` e.g.
 
 ```
-eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule
+eslint -f summary . -- --sort-by rule
 ```
 
 the sorted results can be shown either ascending (default) or descending:
 
 ```
-eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
+eslint -f summary . -- --sort-by rule --desc
 ```
 
 ## Contribute
@@ -121,12 +126,6 @@ yarn
 
 ```
 yarn test
-```
-
-or with watch:
-
-```
-yarn test --watch
 ```
 
 ### Change code
@@ -187,6 +186,7 @@ See https://github.com/sindresorhus/np for more options.
 
 ## TODOs
 
+- remove ansi colours from test snapshots to allow them to pass when `np` runs them
 - add [semantic-release](https://github.com/semantic-release/semantic-release)
 - export results as JSON
 - export each rule turned off and ready to be added to `.eslintrc`
