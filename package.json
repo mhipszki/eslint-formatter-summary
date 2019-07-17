@@ -44,7 +44,7 @@
       "jest": true
     },
     "parserOptions": {
-      "ecmaVersion": 8,
+      "ecmaVersion": 10,
       "sourceType": "module"
     },
     "rules": {
@@ -72,7 +72,7 @@
     "babel-jest": "^24.8.0",
     "babel-plugin-add-module-exports": "^1.0.2",
     "coveralls": "^3.0.5",
-    "eslint": "^4.3.0",
+    "eslint": "^6.0.1",
     "jest": "^24.8.0",
     "prettier": "1.9.0"
   },
