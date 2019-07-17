@@ -2,7 +2,7 @@
 
 # eslint-formatter-summary
 
-### A specific formatter to support ESLint integration to existing projects
+> A specific formatter to support [ESLint](https://eslint.org) integration to existing projects
 
 ## TL;DR
 
@@ -18,35 +18,7 @@ eslint -f node_modules/eslint-formatter-summary . -- --sort-by errors --desc
 
 (see details below).
 
-## Intention
-
-It is a matter of minutes to add ESLint to a new project, but can be quite challenging to introduce it (or just add a stricter rule set) to _existing projects_, already large codebases.
-
-Possibly hundreds if not thousands of errors will pop up which can seem overwhelming to be fixed when we see the default formatted output, forcing us to back up from making our code base better / more consistent.
-
-This package provides a custom ESLint formatter to help in these situations to make the right decisions by showing the linting results aggregated by rule. It gives an overview of all rules failing showing the total number of errors and warnings summed up by rule.
-
-Having this _summary_ overview can give us the opportunity e.g. to consider suppressing certain rules for now and bringing them back in later when we are ready to fix them.
-
-## Supported Node versions
-
-The project came alive with the specific intention is to support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for mostly legacy projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
-
-Supported Node.js versions are the _latest_:
-
-- stable
-- LTS
-- v8
-- v7
-- v6
-- v5
-- v4
-
-Therefore `babel-cli` along with `babel-preset-env` are used to transpile only the necessary bits in the source code in order to provide support for older Node.js versions.
-
-The transpiled code is generated under the `dist/` folder and it is the one used to generate the summary output of ESLint rather than the original ES7+ source code under `lib/`.
-
-## Install
+## How to install
 
 If you're using `yarn` just run
 
@@ -60,15 +32,52 @@ otherwise with `npm` run
 npm i --save-dev eslint-formatter-summary
 ```
 
-## Usage
+## How to use
 
 When you run ESLint just specify `eslint-formatter-summary` as the formatter:
+
+```
+eslint -f summary [file|dir|glob]*
+```
+
+or if you use an older version of ESLint:
 
 ```
 eslint -f node_modules/eslint-formatter-summary [file|dir|glob]*
 ```
 
 See http://eslint.org/docs/user-guide/command-line-interface#-f---format
+
+## Intention
+
+It is a matter of minutes to add ESLint to a new project, but can be quite challenging to introduce it (or just add a stricter rule set) to _existing projects_, already large codebases.
+
+Possibly hundreds if not thousands of errors will pop up which can seem overwhelming to be fixed when we see the default formatted output, forcing us to back up from making our code base better / more consistent.
+
+This package provides a custom ESLint formatter to help in these situations to make the right decisions by showing the linting results aggregated by rule. It gives an overview of all rules failing showing the total number of errors and warnings summed up by rule.
+
+Having this _summary_ overview can give us the opportunity e.g. to consider suppressing certain rules for now and bringing them back in later when we are ready to fix them.
+
+## Supported Node versions
+
+The project came alive with the specific intention to support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for most projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
+
+Supported Node.js versions are the _latest_:
+
+- stable
+- LTS
+- v9
+- v8
+- v7
+- v6
+- v5
+- v4
+
+The distribution version targets Node.js `v4` and should work on this version and above.
+
+## Supported ESLint versions
+
+`ESLint` versions are supported from `v4` onwards, although `eslint-formatter-summary` may also work with lower versions of ESLint. Please open an issue if you need support for other versions of ESLint.
 
 ## Output format
 
@@ -98,15 +107,91 @@ the sorted results can be shown either ascending (default) or descending:
 eslint -f node_modules/eslint-formatter-summary . -- --sort-by rule --desc
 ```
 
+## Contribute
+
+Please feel free to submit an issue describing your proposal you would like to discuss. PRs are also welcome!
+
+### Install dependencies
+
+```
+yarn
+```
+
+### Run unit tests
+
+```
+yarn test
+```
+
+or with watch:
+
+```
+yarn test --watch
+```
+
+### Change code
+
+The project's code is written using the latest EcmaScript standard's features, some of which needs to be polyfilled in older Node.js versions e.g. `Array.prototype.includes` and `String.prototype.padLeft` etc., for that `core-js` is being used.
+
+When changing code, you might want to run unit tests and re-build the project on file changes:
+
+```
+yarn test --watch
+```
+
+and 
+
+```
+yarn dev
+```
+
+### Build project
+
+```
+yarn build
+```
+
+This will use `babel-cli` to transpile the source code targeting `node v4` (the lowest supported Node.js version) to `dist` folder.
+
+The transpiled code is generated under the `dist/` folder and it is the one used to generate the summary output of ESLint rather than the original ES7+ source code under `lib/`.
+
+### Test build project
+
+Once the project is built the distribution version can be tested via passing a `.js` file to `yarn try`.
+
+For example:
+
+```
+yarn try dist/format-summary.js
+```
+
+### CI build
+
+The project is built on Travis-ci.org targeting each supported Node.js versions (see the list above).
+
+During the CI build all source files are linted and all unit tests need to pass resulting in a coverage report.
+
+### Publishing new versions
+
+The project uses semantic versioning.
+
+`patch` versions are used to fix bugs and upgrade dependencies. `minor` versions are used to add new _non-breaking_ features. `major` version is bumped when there are significant changes which could break projects already using `eslint-formatter-summary`.
+
+To publish a new version we use `np`
+
+```
+yarn release 1.2.3
+```
+
+See https://github.com/sindresorhus/np for more options.
+
 ## TODOs
 
 - add [semantic-release](https://github.com/semantic-release/semantic-release)
 - export results as JSON
 - export each rule turned off and ready to be added to `.eslintrc`
-
-## Contribute
-
-Please feel free to add an issue describing your proposal if you'd like to discuss and PRs are also welcome!
+- allow different output showing files with aggregated number of errors / warnings
+- test formatter with different Node.js and ESLint versions on CI
 
 ## License
 

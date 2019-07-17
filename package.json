@@ -23,12 +23,14 @@
     "build": "yarn clean-dist && babel lib/ --out-dir dist/ --ignore __tests__",
     "dev": "yarn clean-dist && yarn build -- --watch",
     "try": "eslint -f ./index.js . -- $@",
+    "release": "np",
     "prepublish": "yarn build",
     "prettier-all": "prettier --write '**/*.js{,on}'",
     "prettier-diff": "prettier --list-different '**/*.js{,on}'"
   },
   "keywords": [
     "eslint",
+    "eslint-formatter",
     "summary",
     "formatter",
     "javascript",
@@ -43,7 +45,7 @@
       "jest": true
     },
     "parserOptions": {
-      "ecmaVersion": 8,
+      "ecmaVersion": 10,
       "sourceType": "module"
     },
     "rules": {
@@ -58,24 +60,25 @@
     "testPathIgnorePatterns": [
       "node_modules",
       "dist"
-    ],
-    "setupFiles": [
-      "<rootDir>/node_modules/babel-polyfill/lib/index.js"
     ]
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "chalk": "^2.0.1",
-    "yargs": "^10.0.3"
+    "chalk": "^2.4.2",
+    "core-js": "^3.1.4",
+    "yargs": "^13.3.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-jest": "^21.2.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.6.0",
-    "coveralls": "^3.0.0",
-    "eslint": "^4.3.0",
-    "jest": "^21.2.1",
-    "prettier": "1.9.0"
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "coveralls": "^3.0.5",
+    "eslint": "^6.0.1",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2"
+  },
+  "optionalDependencies": {
+    "np": "^5.0.3"
   }
 }
