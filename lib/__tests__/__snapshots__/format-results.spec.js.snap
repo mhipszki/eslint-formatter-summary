@@ -1,59 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can sort summary by num of errors 1`] = `
-"[44m ✨  Summary of failing ESLint rules [49m
-errors [31m0[39m warnings [33m1[39m rule: [90mrule1[39m
-errors [31m1[39m warnings [33m0[39m rule: [90mrule3[39m
-errors [31m2[39m warnings [33m0[39m rule: [90mrule2[39m
-🔥  [31m4 problems in total[39m (3 [31merrors[39m, 1 [33mwarnings[39m)"
+" ✨  Summary of failing ESLint rules 
+errors 0 warnings 1 rule: rule1
+errors 1 warnings 0 rule: rule3
+errors 2 warnings 0 rule: rule2
+🔥  4 problems in total (3 errors, 1 warnings)"
 `;
 
 exports[`can sort summary by num of errors 2`] = `
-"[44m ✨  Summary of failing ESLint rules [49m
-errors [31m2[39m warnings [33m0[39m rule: [90mrule2[39m
-errors [31m1[39m warnings [33m0[39m rule: [90mrule3[39m
-errors [31m0[39m warnings [33m1[39m rule: [90mrule1[39m
-🔥  [31m4 problems in total[39m (3 [31merrors[39m, 1 [33mwarnings[39m)"
+" ✨  Summary of failing ESLint rules 
+errors 2 warnings 0 rule: rule2
+errors 1 warnings 0 rule: rule3
+errors 0 warnings 1 rule: rule1
+🔥  4 problems in total (3 errors, 1 warnings)"
 `;
 
 exports[`can sort summary by num of warnings 1`] = `
-"[44m ✨  Summary of failing ESLint rules [49m
-errors [31m1[39m warnings [33m0[39m rule: [90mrule3[39m
-errors [31m0[39m warnings [33m1[39m rule: [90mrule1[39m
-errors [31m0[39m warnings [33m2[39m rule: [90mrule2[39m
-🔥  [31m4 problems in total[39m (1 [31merrors[39m, 3 [33mwarnings[39m)"
+" ✨  Summary of failing ESLint rules 
+errors 1 warnings 0 rule: rule3
+errors 0 warnings 1 rule: rule1
+errors 0 warnings 2 rule: rule2
+🔥  4 problems in total (1 errors, 3 warnings)"
 `;
 
 exports[`can sort summary by num of warnings 2`] = `
-"[44m ✨  Summary of failing ESLint rules [49m
-errors [31m0[39m warnings [33m2[39m rule: [90mrule2[39m
-errors [31m0[39m warnings [33m1[39m rule: [90mrule1[39m
-errors [31m1[39m warnings [33m0[39m rule: [90mrule3[39m
-🔥  [31m4 problems in total[39m (1 [31merrors[39m, 3 [33mwarnings[39m)"
+" ✨  Summary of failing ESLint rules 
+errors 0 warnings 2 rule: rule2
+errors 0 warnings 1 rule: rule1
+errors 1 warnings 0 rule: rule3
+🔥  4 problems in total (1 errors, 3 warnings)"
 `;
 
 exports[`can sort summary by rule id 1`] = `
-"[44m ✨  Summary of failing ESLint rules [49m
-errors [31m0[39m warnings [33m1[39m rule: [90mrule1[39m
-errors [31m0[39m warnings [33m2[39m rule: [90mrule2[39m
-errors [31m1[39m warnings [33m0[39m rule: [90mrule3[39m
-🔥  [31m4 problems in total[39m (1 [31merrors[39m, 3 [33mwarnings[39m)"
+" ✨  Summary of failing ESLint rules 
+errors 0 warnings 1 rule: rule1
+errors 0 warnings 2 rule: rule2
+errors 1 warnings 0 rule: rule3
+🔥  4 problems in total (1 errors, 3 warnings)"
 `;
 
 exports[`can sort summary by rule id 2`] = `
-"[44m ✨  Summary of failing ESLint rules [49m
-errors [31m1[39m warnings [33m0[39m rule: [90mrule3[39m
-errors [31m0[39m warnings [33m2[39m rule: [90mrule2[39m
-errors [31m0[39m warnings [33m1[39m rule: [90mrule1[39m
-🔥  [31m4 problems in total[39m (1 [31merrors[39m, 3 [33mwarnings[39m)"
+" ✨  Summary of failing ESLint rules 
+errors 1 warnings 0 rule: rule3
+errors 0 warnings 2 rule: rule2
+errors 0 warnings 1 rule: rule1
+🔥  4 problems in total (1 errors, 3 warnings)"
 `;
 
 exports[`provides header, summary of rules and total 1`] = `
-"[44m ✨  Summary of failing ESLint rules [49m
-errors [31m0[39m warnings [33m1[39m rule: [90mrule1[39m
-errors [31m0[39m warnings [33m2[39m rule: [90mrule2[39m
-errors [31m2[39m warnings [33m0[39m rule: [90mrule3[39m
-errors [31m1[39m warnings [33m0[39m rule: [90mrule4[39m
-errors [31m1[39m warnings [33m0[39m rule: [90mrule5[39m
-🔥  [31m7 problems in total[39m (4 [31merrors[39m, 3 [33mwarnings[39m)"
+" ✨  Summary of failing ESLint rules 
+errors 0 warnings 1 rule: rule1
+errors 0 warnings 2 rule: rule2
+errors 2 warnings 0 rule: rule3
+errors 1 warnings 0 rule: rule4
+errors 1 warnings 0 rule: rule5
+🔥  7 problems in total (4 errors, 3 warnings)"
 `;
