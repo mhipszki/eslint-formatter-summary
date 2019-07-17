@@ -37,6 +37,9 @@
     "linting",
     "report"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "eslintConfig": {
     "extends": "eslint:recommended",
     "env": {
