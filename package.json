@@ -80,7 +80,7 @@
     ]
   },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^4.0.0",
     "core-js": "^3.1.4",
     "yargs": "^13.3.0"
   },
