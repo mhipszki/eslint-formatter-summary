@@ -99,6 +99,6 @@
     "strip-ansi": "^5.2.0"
   },
   "optionalDependencies": {
-    "np": "^5.0.3"
+    "np": "^6.2.3"
   }
 }
