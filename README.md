@@ -138,7 +138,7 @@ When changing code, you might want to run unit tests and re-build the project on
 yarn test --watch
 ```
 
-and 
+and
 
 ```
 yarn dev
@@ -161,7 +161,7 @@ Once the project is built the distribution version can be tested via passing a `
 For example:
 
 ```
-yarn try dist/format-summary.js
+yarn try module-with-linting-errors.js
 ```
 
 ### CI build
