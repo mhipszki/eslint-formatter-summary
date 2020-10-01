@@ -94,7 +94,7 @@
     "husky": "^4.3.0",
     "jest": "^24.8.0",
     "lint-staged": "^10.4.0",
-    "prettier": "^1.18.2",
+    "prettier": "^2.1.2",
     "strip-ansi": "^6.0.0"
   },
   "optionalDependencies": {
