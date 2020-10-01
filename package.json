@@ -20,7 +20,7 @@
     "test": "jest",
     "test-ci": "yarn lint && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "clean-dist": "rm -rf dist",
-    "build": "yarn clean-dist && babel lib/ --out-dir dist/ --ignore __tests__",
+    "build": "yarn clean-dist && babel lib/ --out-dir dist/ --ignore lib/__tests__",
     "dev": "yarn clean-dist && yarn build -- --watch",
     "try": "eslint -f ./index.js . -- $@",
     "release": "np",
@@ -50,8 +50,7 @@
     "*.js": [
       "prettier --write",
       "eslint",
-      "jest --forceExit --findRelatedTests",
-      "git add"
+      "jest --forceExit --findRelatedTests"
     ]
   },
   "eslintConfig": {
@@ -80,25 +79,25 @@
     ]
   },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^4.1.0",
     "core-js": "^3.1.4",
-    "yargs": "^13.3.0"
+    "yargs": "^16.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
-    "babel-jest": "^24.8.0",
+    "babel-jest": "^26.3.0",
     "babel-plugin-add-module-exports": "^1.0.2",
-    "coveralls": "^3.0.5",
-    "eslint": "^6.0.1",
-    "husky": "^3.0.0",
-    "jest": "^24.8.0",
-    "lint-staged": "^9.2.0",
-    "prettier": "^1.18.2",
-    "strip-ansi": "^5.2.0"
+    "coveralls": "^3.1.0",
+    "eslint": "^7.10.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "strip-ansi": "^6.0.0"
   },
   "optionalDependencies": {
-    "np": "^5.0.3"
+    "np": "^6.5.0"
   }
 }
