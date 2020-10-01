@@ -50,8 +50,7 @@
     "*.js": [
       "prettier --write",
       "eslint",
-      "jest --forceExit --findRelatedTests",
-      "git add"
+      "jest --forceExit --findRelatedTests"
     ]
   },
   "eslintConfig": {
