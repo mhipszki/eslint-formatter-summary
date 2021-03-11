@@ -180,6 +180,7 @@ See https://github.com/sindresorhus/np for more options.
 
 ## Possible improvements / planned features
 
+- test formatter with different Node.js and ESLint versions on CI
 - allow different output showing files with aggregated number of errors / warnings
 - export results as JSON
 - export each rule turned off and ready to be added to `.eslintrc`
