@@ -6,8 +6,8 @@
 
 ## Features
 
-- aggregated errors / warnings per rule
-- sort by rule name, number of errors or warnings
+- aggregated errors / warnings **per rule**
+- **sort by** rule name, number of errors or warnings
 
 ## TL;DR
 
@@ -15,10 +15,10 @@ This formatter simply aggregates the ESLint results _by rule_ and shows the foll
 
 <img width="715" alt="eslint-output-example-summary" src="https://user-images.githubusercontent.com/220661/28670748-ff4cff36-72d1-11e7-8fc0-b0d6a12c69ea.png">
 
-It can also take CLI arguments for sorting results by rule, errors or warnings e.g.
+It can also be configured to sort results by rule, errors or warnings using env vars e.g.
 
-```
-eslint -f summary ./src -- --sort-by errors --desc
+```shell
+SORT_BY=rule DESC=true eslint -f summary ./src
 ```
 
 (see details below).
@@ -27,13 +27,13 @@ eslint -f summary ./src -- --sort-by errors --desc
 
 If you're using `yarn` just run
 
-```
-yarn add --dev eslint-formatter-summary
+```shell
+yarn add -D eslint-formatter-summary
 ```
 
 otherwise with `npm` run
 
-```
+```shell
 npm i --save-dev eslint-formatter-summary
 ```
 
@@ -41,13 +41,13 @@ npm i --save-dev eslint-formatter-summary
 
 When you run ESLint just specify `eslint-formatter-summary` as the formatter:
 
-```
+```shell
 eslint -f summary [file|dir|glob]*
 ```
 
 or if you use an older version of ESLint:
 
-```
+```shell
 eslint -f node_modules/eslint-formatter-summary [file|dir|glob]*
 ```
 
@@ -55,7 +55,7 @@ See http://eslint.org/docs/user-guide/command-line-interface#-f---format
 
 ## Intention
 
-It is a matter of minutes to add ESLint to a new project, but can be quite challenging to introduce it (or just add a stricter rule set) to _existing projects_, already large codebases.
+It is a matter of minutes to add ESLint to a new project, however it can be quite challenging to introduce it (or just add a stricter rule set) to _existing projects_, already large codebases.
 
 Possibly hundreds if not thousands of errors will pop up which can seem overwhelming to be fixed when we see the default formatted output, forcing us to back up from making our code base better / more consistent.
 
@@ -63,34 +63,13 @@ This package provides a custom ESLint formatter to help in these situations to m
 
 Having this _summary_ overview can give us the opportunity e.g. to consider suppressing certain rules for now and bringing them back in later when we are ready to fix them.
 
-## Supported Node versions
-
-The project came alive with the specific intention to support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for most projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
-
-Supported Node.js versions are the _latest_:
-
-- stable
-- LTS
-- v9
-- v8
-- v7
-- v6
-- v5
-- v4
-
-The distribution version targets Node.js `v4` and should work on this version and above.
-
-## Supported ESLint versions
-
-`ESLint` versions are supported from `v4` onwards, although `eslint-formatter-summary` may also work with lower versions of ESLint. Please open an issue if you need support for other versions of ESLint.
-
 ## Output format
 
 With the default ESLint formatter you might get several thousands of lines of failing rules in various files in the output e.g.:
 
 <img width="715" alt="eslint-output-example-default" src="https://user-images.githubusercontent.com/220661/28670749-ff50aae6-72d1-11e7-8458-da73ae458cd2.png">
 
-The summary formatter simply aggregates the ESLint result _by rule_ and shows the following output instead:
+The Summary Formatter simply aggregates the ESLint results _by rule_ and shows the following output instead:
 
 <img width="715" alt="eslint-output-example-summary" src="https://user-images.githubusercontent.com/220661/28670748-ff4cff36-72d1-11e7-8fc0-b0d6a12c69ea.png">
 
@@ -98,19 +77,34 @@ In the above example we can notice that the `comma-dangle` rule is responsible f
 
 ## Sorting output
 
-CLI options can be passed to the formatter to alter the output.
+Configuration options can be passed to the formatter to alter the output.
 
-With `--sort-by` you can sort the aggregated results by either `rule`, `errors` or `warnings` e.g.
+Using the`SORT_BY` env var the aggregated results can be sorted by either `rule`, `errors` or `warnings` e.g.
 
-```
-eslint -f summary . -- --sort-by rule
+```shell
+SORT_BY=rule eslint -f summary ./src
 ```
 
-the sorted results can be shown either ascending (default) or descending:
+the sorted results are shown in ASCENDING order by default but the order can also be reversed using `DESC=true`:
 
+```shell
+SORT_BY=rule DESC=true eslint -f summary ./src
 ```
-eslint -f summary . -- --sort-by rule --desc
-```
+
+## Supported Node versions
+
+The project came alive with the specific intention to support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for most projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
+
+Supported Node.js versions are the _latest_:
+
+- latest stable
+- v4 to LTS
+
+The distribution version targets Node.js `v4` and should work on this version and above.
+
+## Supported ESLint versions
+
+`ESLint` versions are supported from `v4` onwards, although `eslint-formatter-summary` may also work with lower versions of ESLint. Please open an issue if you need support for other versions of ESLint.
 
 ## Contribute
 
@@ -184,9 +178,8 @@ yarn release 1.2.3
 
 See https://github.com/sindresorhus/np for more options.
 
-## TODOs
+## Possible improvements / planned features
 
-- test formatter with different Node.js and ESLint versions on CI
 - allow different output showing files with aggregated number of errors / warnings
 - export results as JSON
 - export each rule turned off and ready to be added to `.eslintrc`
