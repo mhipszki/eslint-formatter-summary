@@ -48,6 +48,19 @@ errors 0 warnings 1 rule: rule1
 🔥  4 problems in total (1 errors, 3 warnings)"
 `;
 
+exports[`omits result for ignored files 1`] = `
+" ✨  Summary of failing ESLint rules 
+errors 0 warnings 1 rule: rule1
+errors 1 warnings 0 rule: rule2
+🔥  2 problems in total (1 errors, 1 warnings)"
+`;
+
+exports[`omits result for ignored files 2`] = `
+" ✨  Summary of failing ESLint rules 
+
+🔥  0 problems in total (0 errors, 0 warnings)"
+`;
+
 exports[`provides header, summary of rules and total 1`] = `
 " ✨  Summary of failing ESLint rules 
 errors 0 warnings 1 rule: rule1
