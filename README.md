@@ -77,6 +77,8 @@ In the above example we can notice that the `comma-dangle` rule is responsible f
 
 ## Sorting output
 
+> Default sorting is by `rule` in an `ascending` order
+
 Configuration options can be passed to the formatter to alter the output.
 
 Using the`SORT_BY` env var the aggregated results can be sorted by either `rule`, `errors` or `warnings` e.g.
