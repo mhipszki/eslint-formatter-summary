@@ -155,7 +155,7 @@ Once the project is built the distribution version can be tested via passing a `
 For example:
 
 ```
-yarn try module-with-linting-errors.js
+yarn try test.js
 ```
 
 ### CI build
