@@ -13,7 +13,7 @@
     "url": "https://github.com/mhipszki/eslint-summary-formatter/issues"
   },
   "engines": {
-    "node": ">=4.2"
+    "node": ">=12"
   },
   "scripts": {
     "lint": "eslint lib/",
