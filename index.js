@@ -1,5 +1,12 @@
 const format = require('./dist/format-results');
 
 module.exports = function formatter(results) {
-  console.log(format(results, process.env));
+  const { SORT_BY, DESC } = process.env;
+
+  console.log(
+    format(results, {
+      SORT_BY,
+      DESC,
+    })
+  );
 };
