@@ -1,0 +1,10 @@
+{
+  "extends": "@voxpelli/tsconfig/node14.json",
+  "include": [
+    "lib/**/*.js",
+  ],
+  "exclude": [
+    "dist/**/*",
+    "lib/__tests__/**/*"
+  ]
+}
