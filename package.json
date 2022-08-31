@@ -2,7 +2,6 @@
   "name": "eslint-formatter-summary",
   "version": "1.1.0",
   "description": "ESLint summary formatter aggregating results by rule",
-  "main": "index.js",
   "author": "Marton Hipszki <mhipszki@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -12,21 +11,24 @@
   "bugs": {
     "url": "https://github.com/mhipszki/eslint-summary-formatter/issues"
   },
+  "type": "module",
+  "exports": "./index.cjs",
   "engines": {
-    "node": ">=12"
+    "node": "^14.18.0 || >=16.0.0"
   },
   "scripts": {
-    "lint": "eslint lib/ && tsc",
-    "test": "jest",
-    "test-ci": "yarn lint && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "clean-dist": "rm -rf dist",
-    "build": "yarn clean-dist && babel lib/ --out-dir dist/ --ignore lib/__tests__",
-    "dev": "yarn clean-dist && yarn build -- --watch",
-    "try": "eslint -f ./index.js",
+    "lint:eslint": "eslint lib/",
+    "lint:tsc": "tsc",
+    "lint": "run-p lint:*",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test-ci:lint": "run-s lint",
+    "test-ci:jest": "node --experimental-vm-modules node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test-ci": "run-s test-ci:*",
+    "try": "eslint -f ./index.cjs",
     "release": "np",
-    "prepublish": "yarn build",
     "prettier-write": "prettier --write '**/*.js{,on}'",
-    "prettier-diff": "prettier --list-different '**/*.js{,on}'"
+    "prettier-diff": "prettier --list-different '**/*.js{,on}'",
+    "prepare": "husky install"
   },
   "keywords": [
     "eslint",
@@ -40,24 +42,18 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn lint && yarn test --collectCoverage"
-    }
-  },
   "lint-staged": {
     "*.js": [
       "prettier --write",
       "eslint",
-      "jest --forceExit --findRelatedTests"
+      "node --experimental-vm-modules node_modules/.bin/jest --forceExit --findRelatedTests"
     ]
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
     "env": {
       "node": true,
-      "es6": true,
+      "es2021": true,
       "jest": true
     },
     "parserOptions": {
@@ -74,33 +70,25 @@
       "**/__tests__/**/*.spec.js"
     ],
     "testPathIgnorePatterns": [
-      "node_modules",
-      "dist"
+      "node_modules"
     ]
   },
   "dependencies": {
-    "chalk": "^4.1.0",
-    "core-js": "^3.9.1"
+    "chalk": "^4.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.10",
-    "@babel/core": "^7.13.10",
-    "@babel/preset-env": "^7.13.10",
     "@types/eslint": "^8.4.6",
     "@types/node": "^14.18.26",
     "@voxpelli/tsconfig": "^4.0.0",
-    "babel-jest": "^26.6.3",
-    "babel-plugin-add-module-exports": "^1.0.2",
     "coveralls": "^3.1.0",
-    "eslint": "^7.21.0",
-    "husky": "^4.3.0",
+    "eslint": "^8.23.0",
+    "husky": "^8.0.0",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
+    "np": "^7.4.0",
+    "npm-run-all2": "^6.0.2",
     "prettier": "^2.2.1",
     "strip-ansi": "^6.0.0",
     "typescript": "~4.6.0"
-  },
-  "optionalDependencies": {
-    "np": "^7.4.0"
   }
 }

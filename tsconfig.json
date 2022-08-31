@@ -1,10 +1,12 @@
 {
   "extends": "@voxpelli/tsconfig/node14.json",
+  "files": [
+    "index.cjs"
+  ],
   "include": [
     "lib/**/*.js",
   ],
   "exclude": [
-    "dist/**/*",
     "lib/__tests__/**/*"
   ]
 }
