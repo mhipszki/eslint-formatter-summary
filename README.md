@@ -18,7 +18,7 @@ This formatter simply aggregates the ESLint results _by rule_ and shows the foll
 It can also be configured to sort results by rule, errors or warnings using env vars e.g.
 
 ```shell
-SORT_BY=rule DESC=true eslint -f summary ./src
+EFS_SORT_BY=rule EFS_SORT_DESC=true eslint -f summary ./src
 ```
 
 (see details below).
@@ -81,16 +81,16 @@ In the above example we can notice that the `comma-dangle` rule is responsible f
 
 Configuration options can be passed to the formatter to alter the output.
 
-Using the`SORT_BY` env var the aggregated results can be sorted by either `rule`, `errors` or `warnings` e.g.
+Using the`EFS_SORT_BY` env var the aggregated results can be sorted by either `rule`, `errors` or `warnings` e.g.
 
 ```shell
-SORT_BY=rule eslint -f summary ./src
+EFS_SORT_BY=rule eslint -f summary ./src
 ```
 
-the sorted results are shown in ASCENDING order by default but the order can also be reversed using `DESC=true`:
+the sorted results are shown in ASCENDING order by default but the order can also be reversed using `EFS_SORT_DESC=true`:
 
 ```shell
-SORT_BY=rule DESC=true eslint -f summary ./src
+EFS_SORT_BY=rule EFS_SORT_DESC=true eslint -f summary ./src
 ```
 
 ## Supported Node versions
