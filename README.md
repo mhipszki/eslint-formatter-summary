@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mhipszki/eslint-formatter-summary.svg?branch=master)](https://travis-ci.org/mhipszki/eslint-formatter-summary) [![npm](https://img.shields.io/npm/v/eslint-formatter-summary.svg)](https://www.npmjs.com/package/eslint-formatter-summary) [![styled with prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Coverage Status](https://coveralls.io/repos/github/mhipszki/eslint-formatter-summary/badge.svg?branch=master)](https://coveralls.io/github/mhipszki/eslint-formatter-summary?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/mhipszki/eslint-formatter-summary.svg)](https://greenkeeper.io/) [![license](https://img.shields.io/github/license/mhipszki/eslint-formatter-summary.svg)](https://github.com/mhipszki/eslint-formatter-summary/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/eslint-formatter-summary.svg)](https://www.npmjs.com/package/eslint-formatter-summary) [![styled with prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Coverage Status](https://coveralls.io/repos/github/mhipszki/eslint-formatter-summary/badge.svg?branch=master)](https://coveralls.io/github/mhipszki/eslint-formatter-summary?branch=master) [![license](https://img.shields.io/github/license/mhipszki/eslint-formatter-summary.svg)](https://github.com/mhipszki/eslint-formatter-summary/blob/master/LICENSE)
 
 # eslint-formatter-summary
 
@@ -123,7 +123,7 @@ npm run try test.js
 
 ### CI build
 
-The project is built on Travis-ci.org targeting each supported Node.js versions (see the list above).
+The project is built on GitHub Actions targeting each supported Node.js versions (see the list above).
 
 During the CI build all source files are linted and all unit tests need to pass resulting in a coverage report.
 
