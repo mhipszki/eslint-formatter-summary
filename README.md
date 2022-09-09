@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mhipszki/eslint-formatter-summary.svg?branch=master)](https://travis-ci.org/mhipszki/eslint-formatter-summary) [![npm](https://img.shields.io/npm/v/eslint-formatter-summary.svg)](https://www.npmjs.com/package/eslint-formatter-summary) [![styled with prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Coverage Status](https://coveralls.io/repos/github/mhipszki/eslint-formatter-summary/badge.svg?branch=master)](https://coveralls.io/github/mhipszki/eslint-formatter-summary?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/mhipszki/eslint-formatter-summary.svg)](https://greenkeeper.io/) [![license](https://img.shields.io/github/license/mhipszki/eslint-formatter-summary.svg)](https://github.com/mhipszki/eslint-formatter-summary/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/eslint-formatter-summary.svg)](https://www.npmjs.com/package/eslint-formatter-summary) [![styled with prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Coverage Status](https://coveralls.io/repos/github/mhipszki/eslint-formatter-summary/badge.svg?branch=master)](https://coveralls.io/github/mhipszki/eslint-formatter-summary?branch=master) [![license](https://img.shields.io/github/license/mhipszki/eslint-formatter-summary.svg)](https://github.com/mhipszki/eslint-formatter-summary/blob/master/LICENSE)
 
 # eslint-formatter-summary
 
@@ -18,7 +18,7 @@ This formatter simply aggregates the ESLint results _by rule_ and shows the foll
 It can also be configured to sort results by rule, errors or warnings using env vars e.g.
 
 ```shell
-SORT_BY=rule DESC=true eslint -f summary ./src
+EFS_SORT_BY=rule EFS_SORT_DESC=true eslint -f summary ./src
 ```
 
 (see details below).
@@ -81,88 +81,49 @@ In the above example we can notice that the `comma-dangle` rule is responsible f
 
 Configuration options can be passed to the formatter to alter the output.
 
-Using the`SORT_BY` env var the aggregated results can be sorted by either `rule`, `errors` or `warnings` e.g.
+Using the`EFS_SORT_BY` env var the aggregated results can be sorted by either `rule`, `errors` or `warnings` e.g.
 
 ```shell
-SORT_BY=rule eslint -f summary ./src
+EFS_SORT_BY=rule eslint -f summary ./src
 ```
 
-the sorted results are shown in ASCENDING order by default but the order can also be reversed using `DESC=true`:
+the sorted results are shown in ASCENDING order by default but the order can also be reversed using `EFS_SORT_DESC=true`:
 
 ```shell
-SORT_BY=rule DESC=true eslint -f summary ./src
+EFS_SORT_BY=rule EFS_SORT_DESC=true eslint -f summary ./src
 ```
 
 ## Supported Node versions
 
-The project came alive with the specific intention to support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for most projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
-
-Supported Node.js versions are the _latest_:
-
-- latest stable
-- v4 to LTS
-
-The distribution version targets Node.js `v4` and should work on this version and above.
+This project targets the current LTS releases of Node.js. See [`engines.node` in `package.json`](package.json).
 
 ## Supported ESLint versions
 
-`ESLint` versions are supported from `v4` onwards, although `eslint-formatter-summary` may also work with lower versions of ESLint. Please open an issue if you need support for other versions of ESLint.
+`ESLint` versions are supported from `v8` onwards.
 
 ## Contribute
 
 Please feel free to submit an issue describing your proposal you would like to discuss. PRs are also welcome!
 
-### Install dependencies
-
-```
-yarn
-```
-
 ### Run unit tests
 
 ```
-yarn test
+npm test
 ```
-
-### Change code
-
-The project's code is written using the latest EcmaScript standard's features, some of which needs to be polyfilled in older Node.js versions e.g. `Array.prototype.includes` and `String.prototype.padLeft` etc., for that `core-js` is being used.
-
-When changing code, you might want to run unit tests and re-build the project on file changes:
-
-```
-yarn test --watch
-```
-
-and
-
-```
-yarn dev
-```
-
-### Build project
-
-```
-yarn build
-```
-
-This will use `babel-cli` to transpile the source code targeting `node v4` (the lowest supported Node.js version) to `dist` folder.
-
-The transpiled code is generated under the `dist/` folder and it is the one used to generate the summary output of ESLint rather than the original ES7+ source code under `lib/`.
 
 ### Test build project
 
-Once the project is built the distribution version can be tested via passing a `.js` file to `yarn try`.
+Once the project is built the distribution version can be tested via passing a `.js` file to `npm run try`.
 
 For example:
 
 ```
-yarn try test.js
+npm run try test.js
 ```
 
 ### CI build
 
-The project is built on Travis-ci.org targeting each supported Node.js versions (see the list above).
+The project is built on GitHub Actions targeting each supported Node.js versions (see the list above).
 
 During the CI build all source files are linted and all unit tests need to pass resulting in a coverage report.
 
@@ -175,7 +136,7 @@ The project uses semantic versioning.
 To publish a new version we use `np`
 
 ```
-yarn release 1.2.3
+npm run release 1.2.3
 ```
 
 See https://github.com/sindresorhus/np for more options.

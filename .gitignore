@@ -3,3 +3,4 @@
 /coverage
 .coveralls.yml
 yarn-error.log
+yarn.lock
