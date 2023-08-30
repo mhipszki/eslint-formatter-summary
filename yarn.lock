@@ -1175,7 +1175,7 @@
     p-each-series "^2.1.0"
     rimraf "^3.0.0"
     slash "^3.0.0"
-    strip-ansi "^6.0.0"
+    strip-ansi "^6.0.1"
 
 "@jest/environment@^26.6.2":
   version "26.6.2"
