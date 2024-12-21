@@ -2,31 +2,6 @@
   "name": "eslint-formatter-summary",
   "version": "2.0.0",
   "description": "ESLint summary formatter aggregating results by rule",
-  "main": "index.js",
-  "author": "Marton Hipszki <mhipszki@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mhipszki/eslint-summary-formatter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mhipszki/eslint-summary-formatter/issues"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "scripts": {
-    "lint": "eslint lib/",
-    "test": "vitest",
-    "test:coverage": "vitest --run --coverage",
-    "build": "esbuild lib/index.ts --bundle --platform=node --packages=external --target=node18 --outdir=dist --sourcemap=linked",
-    "try": "eslint -f ./index.js",
-    "release": "np",
-    "prepublish": "npm run build",
-    "prepare": "husky",
-    "prettier": "prettier --check .",
-    "typecheck": "tsc --noEmit"
-  },
   "keywords": [
     "eslint",
     "eslint-formatter",
@@ -36,8 +11,25 @@
     "linting",
     "report"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "bugs": {
+    "url": "https://github.com/mhipszki/eslint-summary-formatter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhipszki/eslint-summary-formatter.git"
+  },
+  "license": "MIT",
+  "author": "Marton Hipszki <mhipszki@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild lib/index.ts --bundle --platform=node --packages=external --target=node18 --outdir=dist --sourcemap=linked",
+    "lint": "eslint lib/",
+    "prepare": "husky",
+    "prettier": "prettier --check .",
+    "test": "vitest",
+    "test:coverage": "vitest --run --coverage",
+    "try": "eslint -f ./index.js",
+    "typecheck": "tsc --noEmit"
   },
   "husky": {
     "hooks": {
@@ -47,8 +39,7 @@
   "lint-staged": {
     "*.ts": [
       "prettier --write",
-      "eslint",
-      "vitest related"
+      "eslint"
     ]
   },
   "devDependencies": {
@@ -61,8 +52,15 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
     "prettier": "^3.4.2",
+    "prettier-plugin-packagejson": "^2.5.6",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.1",
     "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
