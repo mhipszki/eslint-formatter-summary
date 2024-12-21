@@ -1,3 +1,7 @@
 {
-  "extends": "@tsconfig/node-lts/tsconfig.json"
+  "extends": "@tsconfig/node-lts/tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  }
 }
