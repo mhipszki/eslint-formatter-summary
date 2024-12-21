@@ -18,12 +18,14 @@
   "scripts": {
     "lint": "eslint lib/",
     "test": "vitest",
-    "build": "esbuild lib/index.ts --bundle --platform=node --packages=external --target=node18 --outdir=dist",
+    "test:coverage": "vitest --run --coverage",
+    "build": "esbuild lib/index.ts --bundle --platform=node --packages=external --target=node18 --outdir=dist --sourcemap=linked",
     "try": "eslint -f ./index.js",
     "release": "np",
     "prepublish": "npm run build",
     "prepare": "husky",
-    "prettier": "prettier --check ."
+    "prettier": "prettier --check .",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [
     "eslint",
