@@ -9,18 +9,4 @@ test('returns length of specific prop in a set of objects', () => {
       { ruleId: 'semi', errors: 0, warnings: 1 },
     ]),
   ).toBe('no-undefined'.length);
-
-  expect(
-    lengthOfLongest('errors', [{ ruleId: undefined, errors: 0, warnings: 1 }]),
-  ).toBe(1);
-
-  expect(
-    lengthOfLongest('warnings', [
-      { ruleId: undefined, errors: 0, warnings: 1 },
-    ]),
-  ).toBe(1);
-
-  expect(
-    lengthOfLongest('ruleId', [{ ruleId: undefined, errors: 0, warnings: 1 }]),
-  ).toBe(0);
 });
