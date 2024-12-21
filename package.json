@@ -64,5 +64,8 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1"
   }
 }
