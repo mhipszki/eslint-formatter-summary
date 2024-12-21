@@ -2,11 +2,10 @@ name: CI
 
 on: [push]
 
-runs-on: ubuntu-latest
-
 jobs:
   setup:
     name: Setup
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
@@ -14,6 +13,7 @@ jobs:
   lint:
     name: Lint
     needs: [setup]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
@@ -22,6 +22,7 @@ jobs:
   prettier:
     name: Prettier
     needs: [setup]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
@@ -30,6 +31,7 @@ jobs:
   typecheck:
     name: Type checking
     needs: [setup]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
@@ -38,6 +40,7 @@ jobs:
   unit-tests:
     name: Unit tests
     needs: [setup]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
@@ -49,6 +52,7 @@ jobs:
   build:
     name: Build
     needs: [setup]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
