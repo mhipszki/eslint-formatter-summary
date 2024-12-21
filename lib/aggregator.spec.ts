@@ -1,23 +1,24 @@
 import { test, expect } from 'vitest';
 import { aggregate } from './aggregator';
-import mockResult from './mock-result-factory';
+import { mockLintResult } from './mock-result-factory';
 
 test('aggregates errors and warnings by rule', () => {
   const results = [
-    mockResult([
+    mockLintResult([
       ['rule1', 1],
       ['rule2', 1],
     ]),
-    mockResult([
+    mockLintResult([
       ['rule2', 1],
       ['rule3', 2],
     ]),
-    mockResult([
+    mockLintResult([
       ['rule3', 2],
       ['rule4', 2],
       ['rule5', 2],
     ]),
   ];
+
   expect(aggregate(results)).toEqual([
     { ruleId: 'rule1', errors: 0, warnings: 1 },
     { ruleId: 'rule2', errors: 0, warnings: 2 },

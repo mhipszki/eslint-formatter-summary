@@ -2,24 +2,12 @@ import { ESLint, Linter } from 'eslint';
 
 type Rule = [string, Linter.LintMessage['severity']];
 
-export default function resultFactory(failingRules: Rule[]): ESLint.LintResult {
-  const messages = failingRules.map(function (rule) {
-    const ruleId = rule[0];
-    const severity = rule[1];
-    return {
-      ruleId,
-      severity,
-      message: `'${ruleId}' has failed`,
-      line: 1,
-      column: 1,
-      nodeType: 'Identifier',
-      source: "const foo = 'bar';",
-    };
-  });
-
+export const mockLintResult = (failingRules: Rule[]): ESLint.LintResult => {
   return {
     filePath: '',
-    messages,
+    messages: failingRules.map<Linter.LintMessage>((rule) =>
+      mockLintMessage(rule),
+    ),
     suppressedMessages: [],
     errorCount: 1,
     fatalErrorCount: 0,
@@ -28,4 +16,17 @@ export default function resultFactory(failingRules: Rule[]): ESLint.LintResult {
     fixableWarningCount: 0,
     usedDeprecatedRules: [],
   };
-}
+};
+
+export const mockLintMessage = (rule: Rule): Linter.LintMessage => {
+  const ruleId = rule[0];
+  const severity = rule[1];
+  return {
+    ruleId,
+    severity,
+    message: `'${ruleId}' has failed`,
+    line: 1,
+    column: 1,
+    nodeType: 'Identifier',
+  };
+};

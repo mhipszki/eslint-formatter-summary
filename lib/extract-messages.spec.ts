@@ -1,11 +1,11 @@
 import { test, expect } from 'vitest';
 import { extractMessages } from './extract-messages';
-import mockResult from './mock-result-factory';
+import { mockLintResult } from './mock-result-factory';
 
 test('returns a flat array of messages of ESLint result objects', () => {
   const results = [
-    mockResult([['rule1', 1]]),
-    mockResult([
+    mockLintResult([['rule1', 1]]),
+    mockLintResult([
       ['rule2', 1],
       ['rule3', 2],
     ]),
@@ -19,7 +19,6 @@ test('returns a flat array of messages of ESLint result objects', () => {
       nodeType: 'Identifier',
       ruleId: 'rule1',
       severity: 1,
-      source: "const foo = 'bar';",
     },
     {
       column: 1,
@@ -28,7 +27,6 @@ test('returns a flat array of messages of ESLint result objects', () => {
       nodeType: 'Identifier',
       ruleId: 'rule2',
       severity: 1,
-      source: "const foo = 'bar';",
     },
     {
       column: 1,
@@ -37,7 +35,6 @@ test('returns a flat array of messages of ESLint result objects', () => {
       nodeType: 'Identifier',
       ruleId: 'rule3',
       severity: 2,
-      source: "const foo = 'bar';",
     },
   ]);
 });
