@@ -44,7 +44,7 @@
     ]
   },
   "dependencies": {
-    "chalk": "^5.4.1"
+    "chalk-template": "^1.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
