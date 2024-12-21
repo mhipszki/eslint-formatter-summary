@@ -127,6 +127,10 @@ For example:
 npm run try test.js
 ```
 
+### Commit linting
+
+In order to utilise Semantic Versioning each commit should be classified according to standard [commitlint](https://commitlint.js.org/) rules.
+
 ### CI and quality checks
 
 During the CI build all source files are linted and all unit tests need to pass resulting in a coverage report.
