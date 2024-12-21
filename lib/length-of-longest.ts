@@ -1,0 +1,10 @@
+type Item = { ruleId?: string; errors: number; warnings: number };
+
+export const lengthOfLongest = (prop: keyof Item, items: Item[]) =>
+  items.reduce(
+    (length, item) =>
+      typeof item[prop] !== 'undefined'
+        ? Math.max(length, (item[prop] ?? 0).toString().length)
+        : length,
+    0,
+  );
