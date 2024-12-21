@@ -1,4 +1,4 @@
-export type Rule = { ruleId?: string; errors: number; warnings: number };
+export type Rule = { ruleId: string; errors: number; warnings: number };
 
 export const lengthOfLongest = (prop: keyof Rule, items: Rule[]) =>
   items.reduce(
