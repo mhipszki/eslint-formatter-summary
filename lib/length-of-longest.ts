@@ -1,6 +1,6 @@
-type Item = { ruleId?: string; errors: number; warnings: number };
+export type Rule = { ruleId?: string; errors: number; warnings: number };
 
-export const lengthOfLongest = (prop: keyof Item, items: Item[]) =>
+export const lengthOfLongest = (prop: keyof Rule, items: Rule[]) =>
   items.reduce(
     (length, item) =>
       typeof item[prop] !== 'undefined'
