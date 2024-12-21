@@ -2,4 +2,3 @@
 /node_modules
 /coverage
 .coveralls.yml
-yarn-error.log

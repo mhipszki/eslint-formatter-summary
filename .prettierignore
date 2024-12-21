@@ -1,5 +1,7 @@
-node_modules
-dist
 coverage
-package.json
+dist
+node_modules
 package-lock.json
+package.json
+
+lib-old

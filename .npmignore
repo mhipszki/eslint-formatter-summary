@@ -1,11 +1,7 @@
-/__mocks__
 /lib
 /coverage
-.coveralls.yml
-.babelrc
+.editorconfig
 .DS_Store
 .editorconfig
-.travis.yml
-yarn-error.log
-yarn.lock
 .npmignore
+.prettierignore
