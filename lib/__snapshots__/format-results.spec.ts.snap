@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`can sort summary by num of errors 1`] = `
-" ✨  Summary of failing ESLint rules
+" ✨  Summary of failing ESLint rules 
 errors 0 warnings 1 rule: rule1
 errors 1 warnings 0 rule: rule3
 errors 2 warnings 0 rule: rule2
@@ -9,7 +9,7 @@ errors 2 warnings 0 rule: rule2
 `;
 
 exports[`can sort summary by num of errors 2`] = `
-" ✨  Summary of failing ESLint rules
+" ✨  Summary of failing ESLint rules 
 errors 2 warnings 0 rule: rule2
 errors 1 warnings 0 rule: rule3
 errors 0 warnings 1 rule: rule1
@@ -17,7 +17,7 @@ errors 0 warnings 1 rule: rule1
 `;
 
 exports[`can sort summary by num of warnings 1`] = `
-" ✨  Summary of failing ESLint rules
+" ✨  Summary of failing ESLint rules 
 errors 1 warnings 0 rule: rule3
 errors 0 warnings 1 rule: rule1
 errors 0 warnings 2 rule: rule2
@@ -25,7 +25,7 @@ errors 0 warnings 2 rule: rule2
 `;
 
 exports[`can sort summary by num of warnings 2`] = `
-" ✨  Summary of failing ESLint rules
+" ✨  Summary of failing ESLint rules 
 errors 0 warnings 2 rule: rule2
 errors 0 warnings 1 rule: rule1
 errors 1 warnings 0 rule: rule3
@@ -33,7 +33,7 @@ errors 1 warnings 0 rule: rule3
 `;
 
 exports[`can sort summary by rule id 1`] = `
-" ✨  Summary of failing ESLint rules
+" ✨  Summary of failing ESLint rules 
 errors 0 warnings 1 rule: rule1
 errors 0 warnings 2 rule: rule2
 errors 1 warnings 0 rule: rule3
@@ -41,7 +41,7 @@ errors 1 warnings 0 rule: rule3
 `;
 
 exports[`can sort summary by rule id 2`] = `
-" ✨  Summary of failing ESLint rules
+" ✨  Summary of failing ESLint rules 
 errors 1 warnings 0 rule: rule3
 errors 0 warnings 2 rule: rule2
 errors 0 warnings 1 rule: rule1
@@ -49,28 +49,15 @@ errors 0 warnings 1 rule: rule1
 `;
 
 exports[`defaults to sorting summary by rule id / ascending 1`] = `
-" ✨  Summary of failing ESLint rules
+" ✨  Summary of failing ESLint rules 
 errors 1 warnings 1 rule: A
 errors 0 warnings 1 rule: B
 errors 1 warnings 1 rule: C
 🔥  5 problems in total (2 errors, 3 warnings)"
 `;
 
-exports[`omits result for ignored files 1`] = `
-" ✨  Summary of failing ESLint rules
-errors 0 warnings 1 rule: rule1
-errors 1 warnings 0 rule: rule2
-🔥  2 problems in total (1 errors, 1 warnings)"
-`;
-
-exports[`omits result for ignored files 2`] = `
-" ✨  Summary of failing ESLint rules
-
-🔥  0 problems in total (0 errors, 0 warnings)"
-`;
-
 exports[`provides header, summary of rules and total 1`] = `
-" ✨  Summary of failing ESLint rules
+" ✨  Summary of failing ESLint rules 
 errors 0 warnings 1 rule: rule1
 errors 0 warnings 2 rule: rule2
 errors 2 warnings 0 rule: rule3
