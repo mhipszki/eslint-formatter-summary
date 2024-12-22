@@ -1,10 +1,16 @@
-import { ESLint } from 'eslint';
-import { extractMessages } from './extract-messages';
-import { Linter } from 'eslint';
+import { ESLint, Linter } from 'eslint';
 import { Rule } from './length-of-longest';
 
 export const aggregate = (results: ESLint.LintResult[]): Rule[] =>
   extractMessages(results).reduce(processMessage, []);
+
+export const extractMessages = (
+  results: ESLint.LintResult[],
+): Linter.LintMessage[] =>
+  results.reduce<Linter.LintMessage[]>(
+    (messages, result) => messages.concat(result.messages),
+    [],
+  );
 
 export const processMessage = (
   summary: Rule[],

@@ -1,5 +1,10 @@
 import { test, expect, describe } from 'vitest';
-import { aggregate, findRule, processMessage } from './aggregator';
+import {
+  aggregate,
+  extractMessages,
+  findRule,
+  processMessage,
+} from './aggregator';
 import { mockLintMessage, mockLintResult } from './mock-result-factory';
 import { Rule } from './length-of-longest';
 
@@ -27,6 +32,45 @@ describe('aggregate', () => {
       { ruleId: 'rule3', errors: 2, warnings: 0 },
       { ruleId: 'rule4', errors: 1, warnings: 0 },
       { ruleId: 'rule5', errors: 1, warnings: 0 },
+    ]);
+  });
+});
+
+describe('extractMessages', () => {
+  test('returns a flat array of messages of ESLint result objects', () => {
+    const results = [
+      mockLintResult([['rule1', 1]]),
+      mockLintResult([
+        ['rule2', 1],
+        ['rule3', 2],
+      ]),
+    ];
+    const messages = extractMessages(results);
+    expect(messages).toEqual([
+      {
+        column: 1,
+        line: 1,
+        message: "'rule1' has failed",
+        nodeType: 'Identifier',
+        ruleId: 'rule1',
+        severity: 1,
+      },
+      {
+        column: 1,
+        line: 1,
+        message: "'rule2' has failed",
+        nodeType: 'Identifier',
+        ruleId: 'rule2',
+        severity: 1,
+      },
+      {
+        column: 1,
+        line: 1,
+        message: "'rule3' has failed",
+        nodeType: 'Identifier',
+        ruleId: 'rule3',
+        severity: 2,
+      },
     ]);
   });
 });
