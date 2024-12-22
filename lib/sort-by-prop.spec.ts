@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest';
 import { sortBy } from './sort-by-prop';
-import { Rule } from './length-of-longest';
+import { Rule } from './aggregator';
 
 test('sorts array by given property and direction', () => {
   const createSummary = (): Rule[] => [

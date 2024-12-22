@@ -1,12 +1,12 @@
 import { test, expect, describe } from 'vitest';
 import {
+  Rule,
   aggregate,
   extractMessages,
   findRule,
   processMessage,
 } from './aggregator';
 import { mockLintMessage, mockLintResult } from './mock-result-factory';
-import { Rule } from './length-of-longest';
 
 describe('aggregate', () => {
   test('aggregates errors and warnings by rule', () => {

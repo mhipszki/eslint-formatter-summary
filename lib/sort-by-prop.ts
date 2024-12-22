@@ -1,4 +1,4 @@
-import { Rule } from './length-of-longest';
+import { Rule } from './aggregator';
 
 export const sortBy = (
   prop: keyof Rule,

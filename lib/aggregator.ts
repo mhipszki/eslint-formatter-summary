@@ -1,5 +1,6 @@
 import { ESLint, Linter } from 'eslint';
-import { Rule } from './length-of-longest';
+
+export type Rule = { ruleId: string; errors: number; warnings: number };
 
 export const aggregate = (results: ESLint.LintResult[]): Rule[] =>
   extractMessages(results).reduce(processMessage, []);

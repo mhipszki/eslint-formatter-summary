@@ -3,9 +3,17 @@ import { ESLint } from 'eslint';
 
 import { padNumber } from './pad-num';
 import { sum } from './sum-up';
-import { lengthOfLongest, Rule } from './length-of-longest';
 import { sortBy } from './sort-by-prop';
-import { aggregate } from './aggregator';
+import { Rule, aggregate } from './aggregator';
+
+export const lengthOfLongest = (prop: keyof Rule, items: Rule[]) =>
+  items.reduce(
+    (length, item) =>
+      typeof item[prop] !== 'undefined'
+        ? Math.max(length, (item[prop] ?? 0).toString().length)
+        : length,
+    0,
+  );
 
 const maxErrorLen = (rules: Rule[]) => lengthOfLongest('errors', rules);
 const maxWarningLen = (rules: Rule[]) => lengthOfLongest('warnings', rules);
