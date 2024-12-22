@@ -1,6 +1,6 @@
 import { test, expect, describe } from 'vitest';
 import stripAnsi from 'strip-ansi';
-import format, { lengthOfLongest } from './format-results';
+import format from './format-results';
 import { mockLintResult } from './mock-result-factory';
 
 describe('formatResults', () => {
@@ -131,16 +131,4 @@ describe('formatResults', () => {
 
   //   expect(stripAnsi(format([ignoredFileResults], {}))).toMatchSnapshot();
   // });
-});
-
-describe('lengthOfLongest', () => {
-  test('returns length of specific prop in a set of objects', () => {
-    expect(
-      lengthOfLongest('ruleId', [
-        { ruleId: 'no-console', errors: 0, warnings: 1 },
-        { ruleId: 'no-undefined', errors: 0, warnings: 1 },
-        { ruleId: 'semi', errors: 0, warnings: 1 },
-      ]),
-    ).toBe('no-undefined'.length);
-  });
 });
