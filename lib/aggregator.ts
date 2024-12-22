@@ -1,8 +1,10 @@
 import { ESLint } from 'eslint';
 import { extractMessages } from './extract-messages';
 import { Linter } from 'eslint';
-import { findRule } from './find-rule';
 import { Rule } from './length-of-longest';
+
+export const aggregate = (results: ESLint.LintResult[]): Rule[] =>
+  extractMessages(results).reduce(processMessage, []);
 
 export const processMessage = (
   summary: Rule[],
@@ -24,5 +26,5 @@ export const processMessage = (
   return summary;
 };
 
-export const aggregate = (results: ESLint.LintResult[]): Rule[] =>
-  extractMessages(results).reduce(processMessage, []);
+export const findRule = (summary: Rule[], ruleId: string) =>
+  summary.find((rule) => ruleId === rule.ruleId);

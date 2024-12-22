@@ -1,5 +1,5 @@
 import { test, expect, describe } from 'vitest';
-import { aggregate, processMessage } from './aggregator';
+import { aggregate, findRule, processMessage } from './aggregator';
 import { mockLintMessage, mockLintResult } from './mock-result-factory';
 import { Rule } from './length-of-longest';
 
@@ -80,4 +80,18 @@ describe('processMessage', () => {
   //     warnings: 0,
   //   });
   // });
+});
+
+describe('findRule', () => {
+  test('returns a rule if already included in summary', () => {
+    const summary: Rule[] = [
+      { ruleId: 'existing rule', errors: 1, warnings: 0 },
+    ];
+    expect(findRule(summary, 'existing rule')).toEqual<Rule>({
+      ruleId: 'existing rule',
+      errors: 1,
+      warnings: 0,
+    });
+    expect(findRule(summary, 'non-existing rule')).toBeUndefined();
+  });
 });
