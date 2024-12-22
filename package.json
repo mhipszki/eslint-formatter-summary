@@ -22,6 +22,16 @@
   "author": "Marton Hipszki <mhipszki@gmail.com>",
   "type": "module",
   "main": "index.js",
+  "files": [
+    "dist/*.js",
+    "dist/*.js.map",
+    "README.md",
+    "index.js",
+    "LICENSE",
+    "package.json",
+    "!dist/*.spec.js",
+    "!dist/*.spec.js.map"
+  ],
   "scripts": {
     "build": "node esbuild.config.mjs",
     "lint": "eslint lib/",
