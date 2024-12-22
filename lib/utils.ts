@@ -11,3 +11,6 @@ export const lengthOfLongest = (prop: keyof Rule, items: Rule[]) =>
 
 export const padNumber = (num: number, len: number) =>
   num.toString().padStart(len);
+
+export const sum = (prop: 'errors' | 'warnings', array: Rule[]) =>
+  array.reduce((count, obj) => count + obj[prop], 0);

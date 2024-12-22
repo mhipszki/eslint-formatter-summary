@@ -1,10 +1,9 @@
 import chalk from 'chalk-template';
 import { ESLint } from 'eslint';
 
-import { sum } from './sum-up';
 import { sortBy } from './sort-by-prop';
 import { Rule, aggregate } from './aggregator';
-import { lengthOfLongest, padNumber } from './utils';
+import { lengthOfLongest, padNumber, sum } from './utils';
 
 const maxErrorLen = (rules: Rule[]) => lengthOfLongest('errors', rules);
 const maxWarningLen = (rules: Rule[]) => lengthOfLongest('warnings', rules);

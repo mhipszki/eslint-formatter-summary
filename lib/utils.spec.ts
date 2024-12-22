@@ -1,20 +1,26 @@
-import { test, expect, describe } from 'vitest';
-import { lengthOfLongest, padNumber } from './utils';
+import { test, expect } from 'vitest';
+import { lengthOfLongest, padNumber, sum } from './utils';
 
-describe('lengthOfLongest', () => {
-  test('returns length of specific prop in a set of objects', () => {
-    expect(
-      lengthOfLongest('ruleId', [
-        { ruleId: 'no-console', errors: 0, warnings: 1 },
-        { ruleId: 'no-undefined', errors: 0, warnings: 1 },
-        { ruleId: 'semi', errors: 0, warnings: 1 },
-      ]),
-    ).toBe('no-undefined'.length);
-  });
+test('lengthOfLongest() returns length of specific prop in a set of objects', () => {
+  expect(
+    lengthOfLongest('ruleId', [
+      { ruleId: 'no-console', errors: 0, warnings: 1 },
+      { ruleId: 'no-undefined', errors: 0, warnings: 1 },
+      { ruleId: 'semi', errors: 0, warnings: 1 },
+    ]),
+  ).toBe('no-undefined'.length);
 });
 
-describe('padNumber', () => {
-  test('returns number as string padded left to given length', () => {
-    expect(padNumber(1234, 5)).toBe(' 1234');
-  });
+test('padNumber() returns number as string padded left to given length', () => {
+  expect(padNumber(1234, 5)).toBe(' 1234');
+});
+
+test('sum() sums up a specific prop value of a set of objects', () => {
+  expect(
+    sum('errors', [
+      { ruleId: 'a', errors: 1, warnings: 0 },
+      { ruleId: 'b', errors: 2, warnings: 0 },
+      { ruleId: 'c', errors: 3, warnings: 0 },
+    ]),
+  ).toBe(6);
 });
