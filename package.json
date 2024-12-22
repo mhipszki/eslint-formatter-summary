@@ -23,7 +23,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild lib/index.ts --bundle --platform=node --packages=external --target=node18 --outdir=dist --sourcemap=linked",
+    "build": "node esbuild.config.mjs",
     "lint": "eslint lib/",
     "prepare": "husky",
     "prettier": "prettier --check .",
