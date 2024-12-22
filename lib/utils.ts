@@ -14,3 +14,19 @@ export const padNumber = (num: number, len: number) =>
 
 export const sum = (prop: 'errors' | 'warnings', array: Rule[]) =>
   array.reduce((count, obj) => count + obj[prop], 0);
+
+export const sortBy = (
+  prop: keyof Rule,
+  items: Rule[],
+  direction: 'asc' | 'desc',
+) => {
+  items.sort((a, b) => {
+    if (a[prop] < b[prop]) {
+      return direction === 'asc' ? -1 : 1;
+    }
+    if (a[prop] > b[prop]) {
+      return direction === 'asc' ? 1 : -1;
+    }
+    return 0;
+  });
+};
