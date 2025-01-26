@@ -1,4 +1,8 @@
 {
+  "branches": [
+    "main",
+    "v2-rewrite"
+  ],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
