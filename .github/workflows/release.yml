@@ -2,7 +2,8 @@ name: Release
 
 on:
   push:
-    branches: [*]
+    branches:
+      - v2-rewrite
 # on:
 #   workflow_run:
 #     workflows: [CI]
