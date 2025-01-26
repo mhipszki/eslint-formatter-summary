@@ -1,7 +1,10 @@
 name: Release
 
 on:
-  push:
+  workflow_run:
+    workflows: [CI]
+    types:
+      - completed
     branches:
       - v2-rewrite
 
@@ -12,6 +15,7 @@ jobs:
   release:
     name: Semantic release
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     permissions:
       id-token: write # to enable use of OIDC for npm provenance
       contents: write # to be able to publish a GitHub release
