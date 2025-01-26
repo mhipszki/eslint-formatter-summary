@@ -12,11 +12,11 @@
     "report"
   ],
   "bugs": {
-    "url": "https://github.com/mhipszki/eslint-summary-formatter/issues"
+    "url": "https://github.com/mhipszki/eslint-formatter-summary/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mhipszki/eslint-summary-formatter.git"
+    "url": "git+https://github.com/mhipszki/eslint-formatter-summary.git"
   },
   "license": "MIT",
   "author": "Marton Hipszki <mhipszki@gmail.com>",
