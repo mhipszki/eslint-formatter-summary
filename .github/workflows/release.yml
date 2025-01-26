@@ -8,7 +8,7 @@ on:
 #   workflow_run:
 #     workflows: [CI]
 #     types: [completed]
-#     branches: [main, v2-rewrite]
+#     branches: ["main"]
 
 permissions:
   contents: read # for checkout
