@@ -1,33 +1,7 @@
 {
   "name": "eslint-formatter-summary",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "ESLint summary formatter aggregating results by rule",
-  "main": "index.js",
-  "author": "Marton Hipszki <mhipszki@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mhipszki/eslint-summary-formatter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mhipszki/eslint-summary-formatter/issues"
-  },
-  "engines": {
-    "node": ">=12"
-  },
-  "scripts": {
-    "lint": "eslint lib/",
-    "test": "jest",
-    "test-ci": "yarn lint && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "clean-dist": "rm -rf dist",
-    "build": "yarn clean-dist && babel lib/ --out-dir dist/ --ignore lib/__tests__",
-    "dev": "yarn clean-dist && yarn build -- --watch",
-    "try": "eslint -f ./index.js",
-    "release": "np",
-    "prepublish": "yarn build",
-    "prettier-write": "prettier --write '**/*.js{,on}'",
-    "prettier-diff": "prettier --list-different '**/*.js{,on}'"
-  },
   "keywords": [
     "eslint",
     "eslint-formatter",
@@ -37,66 +11,75 @@
     "linting",
     "report"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "bugs": {
+    "url": "https://github.com/mhipszki/eslint-formatter-summary/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhipszki/eslint-formatter-summary.git"
+  },
+  "license": "MIT",
+  "author": "Marton Hipszki <mhipszki@gmail.com>",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "dist/*.js",
+    "dist/*.js.map",
+    "README.md",
+    "index.js",
+    "LICENSE",
+    "package.json",
+    "!dist/*.spec.js",
+    "!dist/*.spec.js.map"
+  ],
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "lint": "eslint lib/",
+    "prepare": "husky",
+    "prettier": "prettier --check .",
+    "test": "vitest",
+    "test:coverage": "vitest --run --coverage",
+    "try": "eslint -f ./index.js",
+    "typecheck": "tsc --noEmit"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn lint && yarn test --collectCoverage"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.js": [
+    "*.ts": [
       "prettier --write",
-      "eslint",
-      "jest --forceExit --findRelatedTests"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "eslint:recommended",
-    "env": {
-      "node": true,
-      "es6": true,
-      "jest": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 10,
-      "sourceType": "module"
-    },
-    "rules": {
-      "no-console": 0
-    }
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "testMatch": [
-      "**/__tests__/**/*.spec.js"
-    ],
-    "testPathIgnorePatterns": [
-      "node_modules",
-      "dist"
+      "eslint"
     ]
   },
   "dependencies": {
-    "chalk": "^4.1.0",
-    "core-js": "^3.9.1"
+    "chalk-template": "^1.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.10",
-    "@babel/core": "^7.13.10",
-    "@babel/preset-env": "^7.13.10",
-    "babel-jest": "^26.6.3",
-    "babel-plugin-add-module-exports": "^1.0.2",
-    "coveralls": "^3.1.0",
-    "eslint": "^7.21.0",
-    "husky": "^4.3.0",
-    "jest": "^26.6.3",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1",
-    "strip-ansi": "^6.0.0"
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.17.0",
+    "@tsconfig/node-lts": "^22.0.1",
+    "@types/eslint": "^9.6.1",
+    "@vitest/coverage-v8": "^2.1.8",
+    "esbuild": "^0.24.2",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
+    "prettier-plugin-packagejson": "^2.5.6",
+    "semantic-release": "^24.2.1",
+    "strip-ansi": "^7.1.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1",
+    "vitest": "^2.1.8"
   },
-  "optionalDependencies": {
-    "np": "^7.4.0"
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

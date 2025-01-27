@@ -1,22 +1,22 @@
-import chalk from 'chalk';
-import pad from './pad-num';
-import sum from './sum-up';
-import lengthOfLongest from './length-of-longest';
-import sortBy from './sort-by-prop';
-import aggregate from './aggregator';
+import chalk from 'chalk-template';
+import { ESLint } from 'eslint';
 
-const maxErrorLen = (rules) => lengthOfLongest('errors', rules);
-const maxWarningLen = (rules) => lengthOfLongest('warnings', rules);
-const maxRuleLen = (rules) => lengthOfLongest('ruleId', rules);
+import { Rule, aggregate } from './aggregator';
+import { lengthOfLongest, padNumber, sortBy, sum } from './utils';
 
-const totalErrors = (rules) => sum('errors', rules);
-const totalWarnings = (rules) => sum('warnings', rules);
-const totalProblems = (rules) => totalErrors(rules) + totalWarnings(rules);
+const maxErrorLen = (rules: Rule[]) => lengthOfLongest('errors', rules);
+const maxWarningLen = (rules: Rule[]) => lengthOfLongest('warnings', rules);
+const maxRuleLen = (rules: Rule[]) => lengthOfLongest('ruleId', rules);
+
+const totalErrors = (rules: Rule[]) => sum('errors', rules);
+const totalWarnings = (rules: Rule[]) => sum('warnings', rules);
+const totalProblems = (rules: Rule[]) =>
+  totalErrors(rules) + totalWarnings(rules);
 
 const sparkles = String.fromCodePoint(0x2728);
 const flames = String.fromCodePoint(0x1f525);
 
-const constructHeader = (rules) => {
+const constructHeader = (rules: Rule[]) => {
   const errors = '0'.repeat(maxErrorLen(rules));
   const warnings = '0'.repeat(maxWarningLen(rules));
   const longestRule = '0'.repeat(maxRuleLen(rules));
@@ -26,23 +26,28 @@ const constructHeader = (rules) => {
   return chalk`{bgBlue ${header}}`;
 };
 
-const constructSummary = (rules) =>
+const constructSummary = (rules: Rule[]) =>
   rules
     .map((rule, i) => {
-      const errors = pad(rule.errors, maxErrorLen(rules));
-      const warnings = pad(rule.warnings, maxWarningLen(rules));
+      const errors = padNumber(rule.errors, maxErrorLen(rules));
+      const warnings = padNumber(rule.warnings, maxWarningLen(rules));
       const { ruleId } = rule;
       const line = chalk`errors {red ${errors}} warnings {yellow ${warnings}} rule: {gray ${ruleId}}`;
       return i < rules.length - 1 ? `${line}\n` : line;
     })
     .join('');
 
-const constructTotal = (rules) =>
+const constructTotal = (rules: Rule[]) =>
   chalk`${flames}  {red ${totalProblems(
-    rules
+    rules,
   )} problems in total} (${totalErrors(rules)} {red errors}, ${totalWarnings(
-    rules
+    rules,
   )} {yellow warnings})`;
+
+type EnvVars = {
+  SORT_BY?: 'rule' | 'errors' | 'warnings';
+  DESC?: 'true';
+};
 
 /**
  * Generates formatted summary output from ESLint result set
@@ -55,7 +60,10 @@ const constructTotal = (rules) =>
  * @param   {Array} env           Node's process.env
  * @returns {string}              The formatted output
  */
-export default function format(results, { SORT_BY, DESC }) {
+export default function format(
+  results: ESLint.LintResult[],
+  { SORT_BY = 'rule', DESC }: EnvVars,
+): string {
   const rules = aggregate(results);
 
   if (['rule', 'errors', 'warnings'].includes(SORT_BY)) {
