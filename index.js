@@ -1,5 +1,5 @@
-const format = require('./dist/index.js');
+import format from './dist/format-results.js';
 
-module.exports = function formatter(results) {
-  console.log(format(results, process.env));
-};
+export default function formatter(results) {
+  return format(results, process.env);
+}

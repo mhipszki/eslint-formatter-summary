@@ -152,7 +152,6 @@ See https://github.com/sindresorhus/np for more options.
 ## Possible improvements / planned features
 
 - allow different output showing files with aggregated number of errors / warnings
-- export results as JSON
 - export each rule turned off and ready to be added to `.eslintrc`
 - show fixable summart #20
 - export output as markdown #33

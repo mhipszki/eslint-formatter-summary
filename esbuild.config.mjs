@@ -8,4 +8,5 @@ await esbuild.build({
   target: 'node20',
   outdir: 'dist',
   sourcemap: 'linked',
+  format: 'esm',
 });
