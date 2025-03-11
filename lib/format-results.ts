@@ -1,8 +1,8 @@
 import chalk from 'chalk-template';
 import { ESLint } from 'eslint';
 
-import { Rule, aggregate } from './aggregator';
-import { lengthOfLongest, padNumber, sortBy, sum } from './utils';
+import { Rule, aggregate } from './aggregator.js';
+import { lengthOfLongest, padNumber, sortBy, sum } from './utils.js';
 
 const maxErrorLen = (rules: Rule[]) => lengthOfLongest('errors', rules);
 const maxWarningLen = (rules: Rule[]) => lengthOfLongest('warnings', rules);
@@ -60,10 +60,10 @@ type EnvVars = {
  * @param   {Array} env           Node's process.env
  * @returns {string}              The formatted output
  */
-export default function format(
+export const format = (
   results: ESLint.LintResult[],
   { SORT_BY = 'rule', DESC }: EnvVars,
-): string {
+): string => {
   const rules = aggregate(results);
 
   if (['rule', 'errors', 'warnings'].includes(SORT_BY)) {
@@ -80,4 +80,6 @@ export default function format(
   const total = constructTotal(rules);
 
   return `${header}\n${summary}\n${total}`;
-}
+};
+
+// export default format;

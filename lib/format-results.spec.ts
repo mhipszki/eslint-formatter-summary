@@ -1,6 +1,6 @@
 import { test, expect, describe } from 'vitest';
 import stripAnsi from 'strip-ansi';
-import format from './format-results';
+import { format } from './format-results';
 import { mockLintResult } from './mock-result-factory';
 
 describe('formatResults', () => {
