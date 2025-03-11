@@ -1,6 +1,6 @@
-🚧🚧🚧🚧🚧 PLEASE NOTE NEW 2.0.0 VERSION WILL BE PUBLISHED SHORTLY FIXING ALL OUTDATED DEPENDENCIES 🚧🚧🚧🚧🚧
+🎉🎉🎉 New `v2` version is out with up-to-date dependencies! 🎉🎉🎉
 
-[![Build Status](https://travis-ci.org/mhipszki/eslint-formatter-summary.svg?branch=master)](https://travis-ci.org/mhipszki/eslint-formatter-summary) [![npm](https://img.shields.io/npm/v/eslint-formatter-summary.svg)](https://www.npmjs.com/package/eslint-formatter-summary) [![styled with prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Coverage Status](https://coveralls.io/repos/github/mhipszki/eslint-formatter-summary/badge.svg?branch=master)](https://coveralls.io/github/mhipszki/eslint-formatter-summary?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/mhipszki/eslint-formatter-summary.svg)](https://greenkeeper.io/) [![license](https://img.shields.io/github/license/mhipszki/eslint-formatter-summary.svg)](https://github.com/mhipszki/eslint-formatter-summary/blob/master/LICENSE)
+[![Build](https://github.com/mhipszki/eslint-formatter-summary/actions/workflows/ci.yml/badge.svg)](https://github.com/mhipszki/eslint-formatter-summary/actions) [![npm](https://img.shields.io/npm/v/eslint-formatter-summary.svg)](https://www.npmjs.com/package/eslint-formatter-summary) [![styled with prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Coverage Status](https://coveralls.io/repos/github/mhipszki/eslint-formatter-summary/badge.svg?branch=master)](https://coveralls.io/github/mhipszki/eslint-formatter-summary?branch=master) [![license](https://img.shields.io/github/license/mhipszki/eslint-formatter-summary.svg)](https://github.com/mhipszki/eslint-formatter-summary/blob/master/LICENSE)
 
 # eslint-formatter-summary
 
@@ -83,81 +83,24 @@ the sorted results are shown in ASCENDING order by default but the order can als
 SORT_BY=rule DESC=true eslint -f summary ./src
 ```
 
-## Supported Node versions
-
-The project _used to_ support all Node.js version from `v4.x` as this formatter is supposed to be an _enabler for most projects_ and does not want to stand in the way by supporting only the latest Node.js versions.
-
-However, time has passed and the project today is only tested on the latest LTS version of Node.js.
-
 ## Supported ESLint versions
 
 `ESLint` versions are supported from `v7` onwards, although `eslint-formatter-summary` may also work with lower versions of ESLint. Please open an issue if you need support for other versions of ESLint.
 
-## Contribute
+## Supported Node versions
 
-Please feel free to submit an issue describing your proposal you would like to discuss. PRs are also welcome!
+Although the project _used to_ support old Node.js versions, time has passed and it is only tested on the latest LTS version of Node.js.
 
-### Install dependencies
+_Should you need support for older versions of Node.js please get in touch and open an issue._
 
-```
-npm i
-```
+## Contributing
 
-### Change code
-
-The project's code has been re-written using TypeScript as now it can rely on ESLint's exported types to make sure it is fully compatible with ESLint's data interface.
-
-When changing code, you might want to run unit tests and re-build the project on file changes:
-
-```
-npm run test
-```
-
-### Build project
-
-```
-npm run build
-```
-
-### Test build project
-
-Once the project is built the distribution version can be tested via passing a `.js` file to `npm run try`.
-
-For example:
-
-```
-npm run try test.js
-```
-
-### Commit linting
-
-In order to utilise Semantic Versioning each commit should be classified according to standard [commitlint](https://commitlint.js.org/) rules.
-
-### CI and quality checks
-
-During the CI build all source files are linted and all unit tests need to pass resulting in a coverage report.
-
-### Publishing new versions
-
-The project uses semantic versioning.
-
-`patch` versions are used to fix bugs and upgrade dependencies. `minor` versions are used to add new _non-breaking_ features. `major` version is bumped when there are significant changes which could break projects already using `eslint-formatter-summary`.
-
-To publish a new version we use `np`
-
-```
-npm run release 1.2.3
-```
-
-See https://github.com/sindresorhus/np for more options.
+Please feel free to submit an issue describing your proposal you would like to discuss. For more details see [CONTRIBUTING docs](CONTRIBUTING.md)
 
 ## Possible improvements / planned features
 
 - allow different output showing files with aggregated number of errors / warnings
-- export results as JSON
-- export each rule turned off and ready to be added to `.eslintrc`
-- show fixable summart #20
-- export output as markdown #33
+- export output in different formats e.g. JSON, markdown etc.
 - show total number of files #34
 - allow installing package on demand #35
 
