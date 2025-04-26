@@ -14,10 +14,7 @@
   "bugs": {
     "url": "https://github.com/mhipszki/eslint-formatter-summary/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mhipszki/eslint-formatter-summary.git"
-  },
+  "repository": "mhipszki/eslint-formatter-summary",
   "license": "MIT",
   "author": "Marton Hipszki <mhipszki@gmail.com>",
   "type": "module",
