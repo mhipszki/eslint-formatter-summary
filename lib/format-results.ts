@@ -81,5 +81,3 @@ export const format = (
 
   return `${header}\n${summary}\n${total}`;
 };
-
-// export default format;
