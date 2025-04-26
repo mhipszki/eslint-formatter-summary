@@ -29,6 +29,8 @@ jobs:
         with:
           name: build-${{ github.event.pull_request.head.sha || github.sha }}
           path: dist
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
       - name: Display structure of downloaded files
         run: ls -R
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
