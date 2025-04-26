@@ -17,13 +17,13 @@ This formatter simply aggregates the ESLint results _by rule_ and shows the foll
 
 <img width="715" alt="eslint-output-example-summary" src="https://user-images.githubusercontent.com/220661/28670748-ff4cff36-72d1-11e7-8fc0-b0d6a12c69ea.png">
 
-It can also be configured to sort results by rule, errors or warnings using env vars e.g.
+It can also be configured to sort results by rule, errors or warnings using the `SORT_BY` environment variable:
 
 ```shell
 SORT_BY=rule DESC=true eslint -f summary ./src
 ```
 
-(see details below).
+(see more details below).
 
 ## How to install
 
