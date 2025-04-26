@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: [CI]
     types: [completed]
-    branches: [main]
+    # branches: [main]
 
 permissions:
   contents: read # for checkout
@@ -25,10 +25,16 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-${{ github.event.pull_request.head.sha || github.sha }}
+          path: dist
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: npx semantic-release -dry-run
