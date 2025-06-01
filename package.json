@@ -71,7 +71,7 @@
     "strip-ansi": "^7.1.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.0",
-    "vitest": "^3.1.2"
+    "vitest": "^3.1.4"
   },
   "engines": {
     "node": ">=20"
