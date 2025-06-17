@@ -92,6 +92,34 @@ describe('formatResults', () => {
     ).toMatchSnapshot();
   });
 
+  test('can output summary in json format', () => {
+    const results = [
+      mockLintResult([
+        ['rule1', 1],
+        ['rule2', 2],
+      ]),
+    ];
+    const output = JSON.parse(format(results, { FORMAT: 'json' }));
+
+    expect(output).toEqual({
+      summary: {
+        rule1: {
+          errors: 0,
+          warnings: 1,
+        },
+        rule2: {
+          errors: 1,
+          warnings: 0,
+        },
+      },
+      total: {
+        errors: 1,
+        warnings: 1,
+        problems: 2,
+      },
+    });
+  });
+
   // test('omits result for ignored files', () => {
   //   const ignoredFileResults: ESLint.LintResult = {
   //     filePath: 'test.js',

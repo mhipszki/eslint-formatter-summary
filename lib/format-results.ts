@@ -37,6 +37,15 @@ const constructSummary = (rules: Rule[]) =>
     })
     .join('');
 
+const constructJsonSummary = (rules: Rule[]) =>
+  rules.reduce<Record<string, { errors: number; warnings: number }>>(
+    (acc, rule) => {
+      acc[rule.ruleId] = { errors: rule.errors, warnings: rule.warnings };
+      return acc;
+    },
+    {},
+  );
+
 const constructTotal = (rules: Rule[]) =>
   chalk`${flames}  {red ${totalProblems(
     rules,
@@ -47,6 +56,15 @@ const constructTotal = (rules: Rule[]) =>
 type EnvVars = {
   SORT_BY?: 'rule' | 'errors' | 'warnings';
   DESC?: 'true';
+  FORMAT?: 'json' | 'text';
+};
+
+const constructJsonTotal = (rules: Rule[]) => {
+  return {
+    errors: totalErrors(rules),
+    warnings: totalWarnings(rules),
+    problems: totalProblems(rules),
+  };
 };
 
 /**
@@ -62,7 +80,7 @@ type EnvVars = {
  */
 export const format = (
   results: ESLint.LintResult[],
-  { SORT_BY = 'rule', DESC }: EnvVars,
+  { SORT_BY = 'rule', DESC, FORMAT = 'text' }: EnvVars,
 ): string => {
   const rules = aggregate(results);
 
@@ -73,6 +91,12 @@ export const format = (
   } else {
     // default sorting is by rule / ascending
     sortBy('ruleId', rules, 'asc');
+  }
+
+  if (FORMAT === 'json') {
+    const summary = constructJsonSummary(rules);
+    const total = constructJsonTotal(rules);
+    return JSON.stringify({ summary, total }, null, 2);
   }
 
   const header = constructHeader(rules);
