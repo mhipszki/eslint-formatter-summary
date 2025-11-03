@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, fork]
+on: [push, fork, merge_group]
 
 jobs:
   setup:
