@@ -47,7 +47,7 @@ jobs:
       - name: Run unit tests with coverage
         run: npm run test:coverage
       - name: Report coverage
-        uses: davelosert/vitest-coverage-report-action@v2.8.2
+        uses: davelosert/vitest-coverage-report-action@v2.8.3
 
   build:
     name: Build
