@@ -58,7 +58,7 @@ jobs:
       - uses: ./.github/actions/setup
       - run: npm run build
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: build-${{ github.event.pull_request.head.sha || github.sha }}
           path: dist
