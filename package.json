@@ -59,7 +59,7 @@
     "@eslint/js": "^9.25.1",
     "@tsconfig/node-lts": "^22.0.1",
     "@types/eslint": "^9.6.1",
-    "@vitest/coverage-v8": "^3.1.2",
+    "@vitest/coverage-v8": "^4.0.6",
     "esbuild": "^0.25.3",
     "eslint": "^9.25.1",
     "globals": "^16.0.0",
@@ -71,7 +71,7 @@
     "strip-ansi": "^7.1.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.0",
-    "vitest": "^3.1.2"
+    "vitest": "^4.0.6"
   },
   "engines": {
     "node": ">=20"
